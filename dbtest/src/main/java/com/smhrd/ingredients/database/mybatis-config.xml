@@ -9,7 +9,7 @@
 <properties resource="com/smhrd/item/database/db.properties"></properties>
 <!-- 맵퍼에 있는 파라미터 타입 패키지 주소 축약 -->
 <typeAliases>
-	<typeAlias type="com.smhrd.item.model.ItemDTO" alias="ItemDTO"/>
+	<typeAlias type="com.smhrd.ingredients.model.IngredientsDTO" alias="IngredientsDTO"/>
 </typeAliases>
   <environments default="development">
     <environment id="development">
@@ -25,6 +25,6 @@
   <mappers>
   <!-- 내가 사용할 mapper 작성: mapper가 늘어날 경우 여러개 사용해도됨
   mapper의 경로 작성 -->
-    <mapper resource="com/smhrd/item/database/ItemMapper.xml"/>
+    <mapper resource="com/smhrd/ingredients/database/IngredientsMapper.xml"/>
   </mappers>
 </configuration>

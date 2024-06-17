@@ -1,4 +1,4 @@
-package com.smhrd.item.database;
+package com.smhrd.ingredients.database;
 
 import java.io.IOException;
 import java.io.Reader;
