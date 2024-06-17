@@ -30,16 +30,24 @@
  /* my냉장고 */
 
 .sv01 {background:url(../images/sub/sv01.jpg) no-repeat center;background-size:cover;}
-.s01_fridge {position:relative;margin: 100px auto;width: 800px;}
+.s01_fridge {position:relative;margin: 120px auto;width: 800px;}
 .s01_fridge:before {position:absolute;content:'';display: block;width:650px;height:650px;border-radius: 50%;background:#EFF5F1;top:50%;left:50%;transform: translate(-50%, -50%);z-index: -1;}
-.fridge_list .mid_tit h4 {display: flex;align-items: center;}
-.fridge_list .mid_tit h4 span {display: inline-block;width:40px;height:40px;background:#2EC758;border-radius: 50%;color:#fff;font-size:22px;line-height: 43px;text-align: center;margin-right:10px;}
-.unit input {width:48%;}
-.unit .select_wrap {width:48%;}
-.unit .select_wrap .select_box {width:100%;}
-input[type="date"] {width:160px;}
-.file_upload {display:inline-block;width:140px;line-height:56px;font-size:20px;font-weight: 600;border-radius: 5px;text-align: center;}
-
+.mid_tit.loca h4 {display: flex;align-items: center;}
+.mid_tit.loca h4 span {display: inline-block;width:40px;height:40px;background:#2EC758;border-radius: 50%;color:#fff;font-size:22px;line-height: 43px;text-align: center;margin-right:10px;}
+.add_list .unit {font-size:0;}
+.add_list .unit input {width:49%;}
+.add_list .unit .select_wrap {width:49%;margin-left:2%;}
+.add_list .unit .select_wrap .select_box {width:100%;}
+.add_list td input,
+.add_list .select_box a {font-size:16px;}
+.date_picker input[type="date"] {width:130px;}
+.date_picker label {position:relative;display: flex;justify-content: center;align-items: center;}
+.loca .select_box {width:120px;}
+.file_wrap {display: flex;}
+.file_wrap .file_upload {display:inline-block;padding:10px;margin-left:10px;}
+.fridge_null {display: flex;background:#f2f2f2;height:100px;align-items: center;justify-content: center;margin-top:20px;}
+.fridge_null p {font-size:18px;font-weight: 600;color:#444;}
+.ico_info {padding-left:25px;background: url(../images/sub/circle_info.png) no-repeat 0 4px;}
 
  /********************************************************
  
@@ -50,9 +58,6 @@ input[type="date"] {width:160px;}
 .util_page {display: flex;flex-direction:column;align-items: center;justify-content: center;background-color: #F8F8F8;}
 #util_box .big_tit {margin-bottom:40px;}
 #util_box .bdr_wrap {width: 780px;background: #fff;box-shadow: 10px 10px 20px rgba(0, 0, 0, .1);border-radius: 10px;padding:60px 100px;overflow: hidden;}
-.fridge_null {display:flex;background:#f2f2f2;height:100px;align-items: center;justify-content: center;}
-.fridge_null p {font-size:18px;font-weight: 600;color:#444;}
-.ico_info {padding-left:25px;background: url(../images/sub/circle_info.png) no-repeat 0 4px;}
 
 
  /* Join */

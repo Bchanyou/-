@@ -318,7 +318,7 @@ body ::-webkit-scrollbar-thumb { height: 5px; width: 5px;  -moz-border-radius: 5
  ********************************************************/
 
 /* Basic */
-::-webkit-input-placeholder {color:#ccc;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
-::-moz-placeholder {color:#ccc;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
-:-ms-input-placeholder {color:#ccc !important;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
-input:-moz-placeholder {color:#ccc;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
+::-webkit-input-placeholder {color:#aaa;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
+::-moz-placeholder {color:#aaa;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
+:-ms-input-placeholder {color:#aaa !important;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
+input:-moz-placeholder {color:#aaa;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}

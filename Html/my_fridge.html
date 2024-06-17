@@ -47,6 +47,9 @@
 
     <!-- <link rel="stylesheet" href="css/jquery-ui.min.css">
     <script type="text/javascript" src="js/jquery-ui.min.js" charset="utf-8"></script> -->
+    <script>
+        
+    </script>
 
 </head>
 
@@ -127,14 +130,14 @@
                         <div class="s01_fridge"><img src="images/sub/fridge.png" alt="my냉장고"></div>
 
                         <!-- 품목리스트 -->
-                        <form class="tb_wrap fridge_list" action="" name="">
+                        <form class="tb_wrap" action="" name="">
 
                             <div class="mid_tit my20 loca">
                                 <h4><span>01</span><strong>냉장칸</strong></h4>
                             </div>
 
                             <div class="bdr_wrap">
-                                <table>
+                                <table class="fridge_list">
                                     <caption>냉장칸 보유 품목</caption>
                                     <colgroup>
                                         <col width="50px">
@@ -160,22 +163,6 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td>
-                                                <div class="chk_box">
-                                                    <input type="checkbox" id="chk_1" class="chk">
-                                                    <label for="chk_1"></label>
-                                                </div>
-                                            </td>
-                                            <td>품목명(단위)</td>
-                                            <td>기본값 1</td>
-                                            <td>구매날짜</td>
-                                            <td>유통기한날짜</td>
-                                            <td>
-                                                <div class="btn_bdr"><a href="#">수정</a></div>
-                                                <div class="btn_bdr"><a href="#">삭제</a></div>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
 
@@ -188,12 +175,10 @@
                             </div>
 
                             <div class="btn_wrap my30">
-                                <div class="lb">
-                                    <button class="btn_bg">전체삭제</button>
-                                    <button class="btn_bg">선택삭제</button>
-                                </div>
+                                <div class="lb"></div>
                                 <div class="rb">
-                                    <button class="btn_grn btn_modal">품목추가</button>
+                                    <button class="btn_bg check_del" type="button">선택삭제</button>
+                                    <button class="btn_grn btn_modal" type="button">품목추가</button>
                                 </div>
                             </div>
 
@@ -201,8 +186,9 @@
 
                         <!-- 품목추가 팝업창 -->
                         <div class="modal_box w1280 pa50">
-                            
-                            <div class="imgBlock btn_modal_close"><a href="#;"><img src="/images/sub/modal_close.png" alt="팝업창 닫기"></a></div>
+
+                            <div class="imgBlock btn_modal_close"><a href="#;"><img src="/images/sub/modal_close.png"
+                                        alt="팝업창 닫기"></a></div>
 
                             <div class="mid_tit">
                                 <h4><strong>품목 추가</strong></h4>
@@ -215,9 +201,9 @@
                                         <colgroup>
                                             <col width="60px">
                                             <col>
-                                            <col>
+                                            <col width="18%">
                                             <col width="10%">
-                                            <col>
+                                            <col width="8%">
                                             <col>
                                             <col>
                                             <col width="50px">
@@ -230,7 +216,7 @@
                                                 <th>수량</th>
                                                 <th>구매날짜</th>
                                                 <th>유통기한</th>
-                                                <th>보관</th>
+                                                <th>위치</th>
                                                 <th></th>
                                             </tr>
                                         </thead>
@@ -248,13 +234,17 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <input type="number">
+                                                    <input type="number" value="1">
                                                 </td>
-                                                <td>
-                                                    <input type="date">
+                                                <td class="date_picker">
+                                                    <input type="date" id="date_buy" class="date_format" onchange="formatDate()">
                                                 </td>
-                                                <td>
-                                                    <input type="date">
+                                                <td class="date_picker">
+                                                    <div class="file_wrap">
+                                                        <input type="date" id="date_exp" class="date_format" onchange="formatDate()">
+                                                        <input type="file" id="file1" class="inpFile" style="display: none;">
+                                                        <label for="file1" class="file_upload"><i class="fa-regular fa-image" style="color: #2ec758;"></i></label>
+                                                    </div>
                                                 </td>
                                                 <td>
                                                     <div class="select_wrap loca">
@@ -266,20 +256,18 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div class="btn_del"><a href="#;"><img src="/images/sub/delete.png" alt="행 삭제 버튼"></a></div>
+                                                    <div class="row_del"><a href="#;"><img src="/images/sub/delete.png"
+                                                                alt="행 삭제 버튼"></a></div>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
                                 <div class="btn_wrap my30">
-                                    <div class="lb">
-                                        <label for="file1" class="btn_grn file_upload">파일찾기</label> 
-                                        <input type="file" id="file1" class="inpFile" style="display: none;">
-                                    </div>
+                                    <div class="lb"></div>
                                     <div class="rb">
-                                        <button class="btn_bg btn_modal">취소</button>
-                                        <button class="btn_grn btn_modal">확인</button>
+                                        <button class="btn_bg row_add" type="button">행 추가</button>
+                                        <button class="btn_grn" type="submit">완료</button>
                                     </div>
                                 </div>
                             </form>

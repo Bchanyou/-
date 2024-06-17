@@ -100,12 +100,13 @@ nav#gnb > ul > li a:hover {color:#2EC758;}
 
 
 /* Title */
+.big_tit h3,
+.mid_tit {margin-bottom:30px;}
 .big_tit h3 *,
 .mid_tit h4 * {font-family: 'KorailRoundGothicBold';}
 .big_tit {text-align: center;}
 .big_tit h3 strong {font-size:48px;}
-.big_tit p {font-size:18px;color:#444;margin-top:30px;}
-.mid_tit {margin-bottom:20px;}
+.big_tit p {font-size:18px;color:#444;}
 .mid_tit h4 strong {font-size:34px;}
 
 
@@ -137,14 +138,14 @@ table .btn_bdr a:hover {color:#000;border-color: #000;font-weight: 600;}
 .btn_wrap {display: flex;justify-content: space-between;}
 .btn_wrap.center {justify-content: center;}
 .btn_wrap a {display: inline-block;padding:0 20px;line-height: 56px;}
-button {display:inline-block;width:140px;line-height:56px;font-size:20px;font-weight: 600;border-radius: 5px;}
+button {display:inline-block;width:140px;line-height:56px;font-size:20px;font-weight: 600;border-radius: 5px;vertical-align: middle;}
 button.w200 {width:200px;}
 .lb button {margin-right:5px;}
 .rb button {margin-left:5px;}
 .btn_bg {background:#ddd;color:#444;}
 .btn_grn {background:#2EC758;color:#fff;}
-.btn_del a {display: block;padding:5px;}
-.btn_del a img {display: block;}
+.row_del a {display: block;padding:5px;}
+.row_del a img {display: block;}
 
 
 /*************************************************************************************************
