@@ -7,31 +7,48 @@
 		경우 경로부터 작성) sql문 내 매개변수 채워 줄때 ?가 아니라: #{변수명} Member에 있는 변수명과 일치해야함 -->
 	<!-- 파라미터 타입에 패키지 주소가 간소화된 이유: config에 있음 -->
 	<!-- 첫 변수 null: mysql에 1씩 증가하는 값(ai) -->
+	<!-- 회원가입 -->
 	<insert id="memberInsert" parameterType="com.smhrd.member.model.MemberDTO">
 		insert into members (mem_id, mem_pw, mem_name, mem_phone, mem_email, joined_at, mem_type)
 		values(#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_phone}, #{mem_email}, #{joined_at}, #{mem_type})
 	</insert>
 	
+	<!-- 로그인 -->
 	<select id="selectMember" parameterType="com.smhrd.member.model.MemberDTO"
 		resultType="com.smhrd.member.model.MemberDTO">
 		select * from members where mem_id=#{mem_id} and mem_pw=#{mem_pw}
 	</select>
-
-	<select id="boardSelectAll" resultType="MemberDTO">
-		select * from board
-	</select>
-
-	<select id="boardView" parameterType="int" resultType="MemberDTO">
-		select *
-		from board where num=#{num}
-	</select>
-
-	<update id="boardUpdate" parameterType="MemberDTO">
+	
+	<!-- 회원탈퇴 -->
+	<delete id="deletMember"
+		parameterType="String">
+		delete from members where mem_email=#{mem_email}
+	</delete>
+	
+	<!-- 회원정보 수정 -->
+	<update id="">
+		update members
+		set mem_pw=#{mem_pw}, mem_phone=#{mem_phone}, mem_email=#{mem_email}
+		where mem_id=#{mem_id}
+	</update>
+	
+	
+	<update id="boardUpdate" parameterType="com.smhrd.member.model.MemberDTO">
 		update web_member
 		set title=#{title} ,writer=#{writer}, content=#{content}, photo=#{photo}
 		where num=#{num}
 	</update>
 
+	<select id="boardSelectAll" resultType="com.smhrd.member.model.MemberDTO">
+		select * from board
+	</select>
+
+
+
+	<select id="boardView" parameterType="int" resultType="com.smhrd.member.model.MemberDTO">
+		select *
+		from board where num=#{num}
+	</select>
 	<!-- select는 결과값을 받아야 하기 때문에 resultType을 정해줘야함 resultType: 결과값의 타입 작성 -->
 	<!-- <select id="login" parameterType="com.smhrd.model.Board" resultType="com.smhrd.model.Board"> 
 		select * from web_member where email=#{email} and pw=#{pw} </select> resultType: 
