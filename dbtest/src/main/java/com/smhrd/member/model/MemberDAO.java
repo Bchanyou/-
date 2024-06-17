@@ -21,7 +21,7 @@ public class MemberDAO {
 
 			int cnt = 0;
 			try {
-				cnt = sqlSession.insert("com.smhrd.database.MemberMapper.memberInsert", member);// mapper안에 작성한 매개변수 찾기
+				cnt = sqlSession.insert("com.smhrd.member.database.MemberMapper.memberInsert", member);// mapper안에 작성한 매개변수 찾기
 
 				if (cnt > 0) {
 					sqlSession.commit();
@@ -46,7 +46,7 @@ public class MemberDAO {
 			MemberDTO mem = null;
 
 			try {
-				mem = sqlSession.selectOne("com.smhrd.database.MemberMapper.selectMember", member);
+				mem = sqlSession.selectOne("com.smhrd.member.database.MemberMapper.selectMember", member);
 
 				if (mem != null) {
 					sqlSession.commit();

@@ -7,14 +7,14 @@
 		경우 경로부터 작성) sql문 내 매개변수 채워 줄때 ?가 아니라: #{변수명} Member에 있는 변수명과 일치해야함 -->
 	<!-- 파라미터 타입에 패키지 주소가 간소화된 이유: config에 있음 -->
 	<!-- 첫 변수 null: mysql에 1씩 증가하는 값(ai) -->
-	<insert id="memberInsert" parameterType="MemberDTO">
-		insert into members (mem_id, mem_pw, mem_name, mem_phone, mem_email, mem_refri, joined_at, mem_type)
-		values(#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_phone}, #{mem_email}, #{mem_refri}, #{mem_type})
+	<insert id="memberInsert" parameterType="com.smhrd.member.model.MemberDTO">
+		insert into members (mem_id, mem_pw, mem_name, mem_phone, mem_email, joined_at, mem_type)
+		values(#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_phone}, #{mem_email}, #{joined_at}, #{mem_type})
 	</insert>
 	
 	<select id="selectMember" parameterType="com.smhrd.member.model.MemberDTO"
 		resultType="com.smhrd.member.model.MemberDTO">
-		select * from members where id=#{id} and pw=#{pw}
+		select * from members where mem_id=#{mem_id} and mem_pw=#{mem_pw}
 	</select>
 
 	<select id="boardSelectAll" resultType="MemberDTO">

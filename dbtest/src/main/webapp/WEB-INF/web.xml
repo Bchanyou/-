@@ -8,31 +8,31 @@
   	<servlet-name>LoginCon</servlet-name>
   	<display-name>LoginCon</display-name>
   	<description></description>
-  	<servlet-class>com.smhrd.controller.LoginCon</servlet-class>
+  	<servlet-class>com.smhrd.member.controller.LoginCon</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>LogoutCon</servlet-name>
   	<display-name>LogoutCon</display-name>
   	<description></description>
-  	<servlet-class>com.smhrd.controller.LogoutCon</servlet-class>
+  	<servlet-class>com.smhrd.member.controller.LogoutCon</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>JoinCon</servlet-name>
   	<display-name>JoinCon</display-name>
   	<description></description>
-  	<servlet-class>com.smhrd.controller.JoinCon</servlet-class>
+  	<servlet-class>com.smhrd.member.controller.JoinCon</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>EditMemberCon</servlet-name>
   	<display-name>EditMemberCon</display-name>
   	<description></description>
-  	<servlet-class>com.smhrd.controller.EditMemberCon</servlet-class>
+  	<servlet-class>com.smhrd.member.controller.EditMemberCon</servlet-class>
   </servlet>
   <servlet>
   	<servlet-name>WithdrawalCon</servlet-name>
   	<display-name>WithdrawalCon</display-name>
   	<description></description>
-  	<servlet-class>com.smhrd.controller.WithdrawalCon</servlet-class>
+  	<servlet-class>com.smhrd.member.controller.WithdrawalCon</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>LoginCon</servlet-name>

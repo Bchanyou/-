@@ -16,7 +16,7 @@ public class SqlSessionManager {
 
 		// db연결: resource 연결(mybatis-config.xml)
 		// 경로 먼저 작성
-		String path = "com/smhrd/database/mybatis-config.xml";
+		String path = "com/smhrd/member/database/mybatis-config.xml";
 
 		// xml 파일을 읽기 위해 getResourceAsReader()메소드 사용
 		try {
