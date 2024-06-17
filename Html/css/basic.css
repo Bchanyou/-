@@ -1,0 +1,324 @@
+@charset "utf-8";
+
+/*
+ * File Name : basic.css
+ * 작성일 : 2024-06-14
+ */
+
+
+/*-----------------------------------------------------------------------------
+ *  Pretendard : 100,200,300,400,500,600,700,800,900
+ *----------------------------------------------------------------------------*/
+
+@font-face{
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-Thin.woff') format('woff'),
+    url('fonts/Pretendard-Thin.woff2') format('woff2'),
+    url('fonts/Pretendard-Thin.ttf') format("truetype");
+    font-weight: 100;
+}
+@font-face{
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-ExtraLight.woff') format('woff'),
+    url('fonts/Pretendard-ExtraLight.woff2') format('woff2'),
+    url('fonts/Pretendard-ExtraLight.ttf') format("truetype");
+    font-weight: 200;
+}
+@font-face{
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-Light.woff') format('woff'),
+    url('fonts/Pretendard-Light.woff2') format('woff2'),
+    url('fonts/Pretendard-Light.ttf') format("truetype");
+    font-weight: 300;
+}
+@font-face{
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-Regular.woff') format('woff'),
+    url('fonts/Pretendard-Regular.woff2') format('woff2'),
+    url('fonts/Pretendard-Regular.ttf') format("truetype");
+    font-weight: 400;
+}
+@font-face{
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-Medium.woff') format('woff'),
+    url('fonts/Pretendard-Medium.woff2') format('woff2'),
+    url('fonts/Pretendard-Medium.ttf') format("truetype");
+    font-weight: 500;
+}
+@font-face{
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-SemiBold.woff') format('woff'),
+    url('fonts/Pretendard-SemiBold.woff2') format('woff2'),
+    url('fonts/Pretendard-SemiBold.ttf') format("truetype");
+    font-weight: 600;
+}
+@font-face{
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-Bold.woff') format('woff'),
+    url('fonts/Pretendard-Bold.woff2') format('woff2'),
+    url('fonts/Pretendard-Bold.ttf') format("truetype");
+    font-weight: 700;
+}
+@font-face{
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-ExtraBold.woff') format('woff'),
+    url('fonts/Pretendard-ExtraBold.woff2') format('woff2'),
+    url('fonts/Pretendard-ExtraBold.ttf') format("truetype");
+    font-weight: 800;
+}
+@font-face{
+    font-family: 'Pretendard';
+    src: url('fonts/Pretendard-Black.woff') format('woff'),
+    url('fonts/Pretendard-Black.woff2') format('woff2'),
+    url('fonts/Pretendard-Black.ttf') format("truetype");
+    font-weight: 900;
+}
+
+
+/*-----------------------------------------------------------------------------
+ *  코레일둥근고딕 : 
+ *----------------------------------------------------------------------------*/
+
+@font-face {
+    font-family: 'KorailRoundGothicBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KorailRoundGothicBold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.font {font-family: 'KorailRoundGothicBold';}
+
+/********************************************************
+ 
+ *  Reset
+ 
+ ********************************************************/
+
+ * {margin:0;padding:0;-webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box;-ms-box-sizing: border-box;box-sizing: border-box;}
+ *::before,
+ *::after{-webkit-box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box;-ms-box-sizing: border-box;box-sizing: border-box}
+ html {width:100%;height:100%;-webkit-text-size-adjust: none; -moz-text-size-adjust: none; -ms-text-size-adjust: none;/*overflow-y:scroll;*/}
+ html, body, div, span, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var,
+ b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {margin:0;padding:0;border:0;outline:0;vertical-align:baseline;background:transparent;list-style:none;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;}
+ sup {vertical-align:top;font-size:0.6em;}
+ article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main {display:block;}
+ h1,h2,h3,h4,h5,h6,em,address,caption,em,cite {font-style:normal;font-weight: normal;}
+ blockquote, q {quotes:none;}
+ blockquote:before, blockquote:after,q:before, q:after {content:'';content:none;}
+ table{width:100%;border-collapse:collapse;border-spacing:0;word-break:break-all;border:0;}
+ table th, table td{vertical-align:middle;}
+ caption{visibility:hidden;width:0;height:0;font-size:0;line-height:0;zoom:1;}
+ fieldset{margin:0;padding:0;border:0 none;}
+ legend{display:none; overflow:hidden; width:0; height:0; font-size:0; visibility:visible; line-height:0;}
+ select, img, input, textarea,button {font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;color:#888;outline: none;}
+ label {vertical-align:middle;cursor:pointer;}
+ input[type=checkbox], input[type=radio] {display: inline-block;vertical-align:middle;margin-right:8px;}
+ input:focus,
+ select,
+ a,
+ textarea{outline: none; -webkit-tap-highlight-color:transparent; }
+ a {color:#000;}
+ button {background:none; margin:0; padding:0; border:0 none; cursor:pointer;}
+ img {max-width: 100%; border:none; -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='crop')"; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='crop');}
+ .imgBlock img {display: block;width: 100%;}
+ 
+ 
+ /* Number Type Arrow Hide */
+ input[type=number]::-webkit-outer-spin-button,
+ input[type=number]::-webkit-inner-spin-button {-webkit-appearance: none;  margin: 0;}
+ input[type=number] { -moz-appearance: textfield;}
+ input[type=button] { -webkit-appearance: none; }
+
+
+/********************************************************
+ 
+ *  Link Style
+ 
+ ********************************************************/
+
+ a {text-decoration:none;color:#666;-webkit-transition: background .3s ease, border .3s ease, color .3s ease, opacity .3s ease-in-out, outline .3s ease;-moz-transition: background .3s ease, border .3s ease, color .3s ease, opacity .3s ease-in-out, outline .3s ease;-ms-transition: background .3s ease, border .3s ease, color .3s ease, opacity .3s ease-in-out, outline .3s ease;-o-transition: background .3s ease, border .3s ease, color .3s ease, opacity .3s ease-in-out, outline .3s ease;transition: background .3s ease, border .3s ease, color .3s ease, opacity .3s ease-in-out, outline .3s ease;}
+ a:hover {text-decoration:none;}
+
+
+/********************************************************
+ 
+ *  Form Style
+ 
+ ********************************************************/
+
+/*-----------------------------------------------------------------------------
+ *  Select
+ *----------------------------------------------------------------------------*/
+
+/* Basic */
+
+.select_wrap {display: inline-block;vertical-align: middle;}
+.select_box {position:relative; display: inline-block; width:150px;height:50px;padding-right: 30px;}
+.select_box select {visibility:hidden;outline:none;}
+.select_box a {font-size: 18px;color:#000;}
+.select_box .select_title { overflow:hidden; position:absolute; top:0;  left:0; padding:0 20px; width:100%;line-height:48px; background:#fff; border:1px solid #ccc; border-radius:5px;-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; -o-user-select:none; user-select:none;text-align: left;}
+.select_box .select_title.open { border-color:#000;}
+.select_box .select_title span {white-space:nowrap;}
+.select_box .select_title .arrow { position:absolute; top:0; right:0; width:30px; height:100%;}
+.select_box .select_title .arrow:before { content:''; display:block;  position:absolute; right:20px; top:19px;width:7px; height:7px; border-width:1px 1px 0 0; border-style:solid; border-color:#666; transform:rotate(135deg); }
+.select_box .select_title.open .arrow:before {top:22px;transform:rotate(315deg); }
+.select_box ul { overflow:hidden; display:none; position:absolute; width: 100%; top:50px; left:0; border:1px solid #888;border-radius: 0 0 5px 5px;z-index: 1;}
+.select_box .select_title.open + ul {border-color:#000;border-top-color:#fff;}
+.select_box ul li.optgroup span { display:block; padding:5px;  background:#fff; }
+.select_box ul li.optgroup ~ .option a { padding-left:20px; }
+.select_box ul li a { display:block; padding:6px 20px; white-space:nowrap;background:#fff;border-bottom: 1px solid #e5e5e5;color:#666;text-align: left;}
+.select_box ul li:last-child a {border-bottom: none;}
+.select_box ul li a.selected,
+.select_box ul li a:hover {color:#000; }
+.select_box ul li a.selected {background:#f6f6f6;}
+
+
+
+/*-----------------------------------------------------------------------------
+ *  Check Box
+ *----------------------------------------------------------------------------*/
+
+/* Basic */
+.chk_box {display: inline-block;vertical-align: middle;margin: 2px 10px 2px 0;}
+.chk_box .chk {display:none;}
+.chk_box .chk + label {display:block;width:25px;height: 25px;border: 1px solid #888;border-radius: 5px;}
+.chk_box .chk:checked + label {border-color: #2EC758;background:url(../images/sub/check_on.svg) no-repeat center;background-size:15px;}
+
+
+/* Login Check*/
+.chk_box .login_chk {display:none;}
+.login_chk + label {position: relative;display: inline-block;font-size:16px; color:#888;border:none;width:auto;height:auto;border-radius: 0;padding:3px 3px 3px 30px;background:url(../images/login/check.png) no-repeat 0;background-size:20px;}
+.login_chk:checked + label {color:#2EC758;background-image:url(../images/login/check_on.png);font-weight: 600;}
+
+
+/*-----------------------------------------------------------------------------
+ *  Radio Button
+ *----------------------------------------------------------------------------*/
+
+/* Basic */
+.rdo_btn {display: inline-block;vertical-align: middle;margin: 2px 10px 2px 0;}
+.rdo_btn .rdo {display:none;}
+.rdo_btn .rdo + label {position: relative;display: inline-block;vertical-align: middle;font-size:14px;line-height:1; color:#444;}
+.rdo_btn .rdo + label:before {content:'';display:inline-block;vertical-align: middle;width:20px;height:20px;border-radius: 50%;border:1px solid #ccc;margin-right: 5px;}
+.rdo_btn .rdo:checked + label {color:#000;}
+.rdo_btn .rdo:checked + label:before {background:#35c5f0 url("../images/icon/radio_on.png") center center;background-size: 20px auto; border-color:#35c5f0; }
+
+
+/*-----------------------------------------------------------------------------
+ *  File Field
+ *----------------------------------------------------------------------------*/
+
+.filebox {position: relative;padding-right:80px;margin:4px 0;}
+.filebox .upload-name {display: inline-block;height: 40px;padding: 0 10px;vertical-align: middle;border: 1px solid #ddd;width: 100%;color: #666;}  
+.filebox label {position: absolute;right: 0;top: 0; display: inline-block;padding: 10px 0;font-size: 15px; color: #fff;vertical-align: middle;background-color: #666;cursor: pointer;width: 80px; height: 40px;text-align: center;transition: background 0.3s ease;}
+.filebox label:hover {background:#222;}
+.filebox input[type="file"] {position: absolute;width: 0;height: 0;padding: 0;overflow: hidden;border: 0;}
+
+
+
+/*-----------------------------------------------------------------------------
+ *  input Text
+ *----------------------------------------------------------------------------*/
+
+/* Basic */
+input {display: inline-block;width:100%;vertical-align: middle;font-size: 18px;font-weight: 500; color: #000;border:1px solid #ccc;padding:0 15px;line-height: 48px;transition: all 0.3s ease;border-radius: 5px;}
+
+input[type=text]:focus,
+input[type=number]:focus,
+input[type=password]:focus {border-color:#2EC758;}
+/* input[readonly] {background:#fcfcfc;}
+input[disabled] {background:#f8f8f8;}
+input[readonly]:focus {border-color:#ccc;} */
+
+/* Size */
+input.inp_150 {max-width: 150px}
+input.inp_200 {max-width: 200px}
+
+
+/********************************************************
+ 
+ *  Drop Down
+ 
+ ********************************************************/
+
+.drop_down {position: relative;}
+.drop_down + .drop_down {margin-top:10px;}
+.drop_title a {position:relative;display:inline-block;width:190px;line-height:38px;padding:0 35px 0 15px;color:#a7b1d6;border:1px solid #4e587d;background:#1a1f31;border-radius: 5px;}
+.drop_title a:after {position:absolute;content:'';display: block;width:5px;height:5px;border:1px solid #a7b1d6;border-width: 0 1px 1px 0;transform: rotate(45deg);top:15px;right:15px;}
+.drop_title.active a {position:relative;}
+.drop_title.active a:after {transform:rotate(225deg);top:20px;}
+.drop_sub {position: absolute;left:0;bottom:1px;width: 100%; border:1px solid #4e587d;background:#1c2235;z-index: 100; transform: translateY(100%);border-radius: 5px;padding:8px 15px;overflow: hidden;}
+.drop_sub li a {display: block; font-size: 13px; padding: 5px 0;color: #a7b1d6;}
+.drop_sub li a:hover {color:#fff;}
+
+
+/********************************************************
+ 
+ *  Tabs
+ 
+ ********************************************************/
+
+/* Tab Row */
+.tabs.row {position:relative;}
+.tabs.row .tabs_head {display: flex;position:absolute;top:-40px;right:0;transform: translateY(-100%);}
+.tabs.row .tabs_head .tab {display: flex; align-items: center; font-size: 22px; color: #333;padding:13px 30px;cursor: pointer; transition: all 0.3s ease;border-radius: 50px;font-weight: 600;}
+.tabs.row .tabs_head .tab.tabs_head_active {color:#fff;background:#33a3ff;cursor: default;}
+.tabs.row .tabs_cont {}
+.tabs.row .tabs_item { display: none;}
+.tabs.row .tabs_cont_active {display: block;}
+
+
+/* Tab Column */
+.tabs.col {display: flex;align-items: stretch;}
+.tabs.col .tabs_head {position:relative;width:200px;}
+.tabs.col .tabs_head .tab {display: flex; align-items: center;height: 45px; font-size: 15px; color: #666; background:#f6f6f6; padding:0 20px; border: 1px solid #ddd;cursor: pointer; transition: all 0.3s ease;}
+.tabs.col .tabs_head .tab + .tab {border-top: none;}
+.tabs.col .tabs_head .tabs_head_active {color:#000;background:#fff; border-right-color: #fff; cursor: default;}
+.tabs.col .tabs_cont {width: 100%; padding: 20px;border:1px solid #ddd;margin-left: -1px;}
+.tabs.col .tabs_item { display: none;}
+.tabs.col .tabs_cont_active {display: block;}
+
+
+/********************************************************
+ 
+ *  Etc
+ 
+ ********************************************************/
+
+.autoH {zoom: 1;}
+.autoH:after {display:block;clear:both;content:' '}
+.clearFix {clear:both;}
+.hidden {visibility:hidden;position:absolute;top:0;left:0;width:0;height:0;font-size:0;line-height:0;}
+.accessibilityWrap dd a {display:block;position:absolute;top:-10000px;left:0;z-index:10000;width:100%;background:#333;color:#fff;font-size:16px;text-align:center;padding:20px 0;}
+.accessibilityWrap dd a:focus {top:0;}
+
+
+/********************************************************
+ 
+ *  Scrollbar
+ 
+ ********************************************************/
+
+/* Basic */
+html::-webkit-scrollbar {width:5px;height: 5px;}
+html::-webkit-scrollbar-track {background:none;}
+html::-webkit-scrollbar-thumb {background-color: #444;}
+html {scrollbar-color: #444 #e4e4e4;}
+
+body ::-webkit-scrollbar { width: 5px; height: 5px; background: none; }
+body ::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {height: 5px; display: none; }
+body ::-webkit-scrollbar-track {background: none;  -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;}
+body ::-webkit-scrollbar-thumb { height: 5px; width: 5px;  -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;background-color: #444;}
+
+
+/********************************************************
+ 
+ *  Placeholder
+ 
+ ********************************************************/
+
+/* Basic */
+::-webkit-input-placeholder {color:#ccc;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
+::-moz-placeholder {color:#ccc;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
+:-ms-input-placeholder {color:#ccc !important;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
+input:-moz-placeholder {color:#ccc;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
