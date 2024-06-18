@@ -7,6 +7,8 @@
 		경우 경로부터 작성) sql문 내 매개변수 채워 줄때 ?가 아니라: #{변수명} Member에 있는 변수명과 일치해야함 -->
 	<!-- 파라미터 타입에 패키지 주소가 간소화된 이유: config에 있음 -->
 	<!-- 첫 변수 null: mysql에 1씩 증가하는 값(ai) -->
+	
+	
 	<!-- 회원가입 -->
 	<insert id="memberInsert" parameterType="com.smhrd.member.model.MemberDTO">
 		insert into members (mem_id, mem_pw, mem_name, mem_phone, mem_email, joined_at, mem_type)
@@ -26,7 +28,7 @@
 	</delete>
 	
 	<!-- 회원정보 수정 -->
-	<update id="">
+	<update id="updateMember">
 		update members
 		set mem_pw=#{mem_pw}, mem_phone=#{mem_phone}, mem_email=#{mem_email}
 		where mem_id=#{mem_id}
