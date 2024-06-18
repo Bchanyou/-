@@ -1,0 +1,8 @@
+package com.smhrd.order.model;
+
+public class Snippet {
+	public static void main(String[] args) {
+		order
+	}
+}
+

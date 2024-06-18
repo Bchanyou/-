@@ -1,0 +1,38 @@
+1718583821275	Rename package 'com.smhrd.controller'
+1718583832214	Rename package 'com.smhrd.database'
+1718583843862	Rename package 'com.smhrd.model'
+1718590106120	Delete element
+1718592658638	Delete element
+1718605356771	Copy elements
+1718605559158	Rename resource 'MemberMapper.xml'
+1718605907149	Rename type 'SelectItemCon'
+1718606072209	Copy elements
+1718606198073	Rename resource 'ItemMapper.xml'
+1718606231400	Delete element
+1718606243569	Copy compilation units
+1718606252919	Rename type 'ItemDAO'
+1718606261881	Rename type 'ItemDTO'
+1718606385157	Copy elements
+1718606395364	Copy compilation units
+1718606413180	Rename type 'ItemDAO'
+1718606419483	Rename type 'ItemDTO'
+1718606428192	Rename resource 'ItemMapper.xml'
+1718607544338	Rename package 'com.smhrd.item.controller'
+1718607557914	Rename package 'com.smhrd.item.database'
+1718607565187	Rename package 'com.smhrd.item.model'
+1718607577428	Rename package 'com.smhrd.ingredients.controller'
+1718607583499	Rename package 'com.smhrd.ingredients.database'
+1718607590317	Rename package 'com.smhrd.ingredients.model'
+1718608075178	Rename type 'ItemDAO'
+1718608083800	Rename type 'ItemDTO'
+1718608099088	Rename type 'AddItemCon'
+1718608117040	Rename type 'SelectAllItemCon'
+1718608137894	Rename package 'com.smhrd.ingredient.database'
+1718608150024	Rename package 'com.smhrd.ingredient.model'
+1718608154833	Rename package 'com.smhrd.ingredient.controller'
+1718608221222	Rename resource 'ItemMapper.xml'
+1718669305894	Copy elements
+1718669320759	Copy compilation units
+1718669353972	Rename resource 'MemberMapper.xml'
+1718669420726	Rename type 'MemberDAO'
+1718669431082	Rename type 'MemberDTO'

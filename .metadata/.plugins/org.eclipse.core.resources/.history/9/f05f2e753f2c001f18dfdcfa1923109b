@@ -1,0 +1,6 @@
+#no korean
+#no space
+driver=com.mysql.cj.jdbc.Driver
+url=jdbc:mysql://localhost:3306/newnewnew?serverTimezone=UTC&characterEncoding=UTF-8
+username=root
+password=1234

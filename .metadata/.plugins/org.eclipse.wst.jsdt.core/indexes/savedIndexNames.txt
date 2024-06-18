@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Users\smhrd\Desktop\핵심프로젝트\Take_care_of_the_fridge\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2025751457.index
+4038431948.index
+3089581138.index
+2344523871.index
+3840859297.index
+3241864624.index

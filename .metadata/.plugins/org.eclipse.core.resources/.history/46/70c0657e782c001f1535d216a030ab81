@@ -1,0 +1,5 @@
+package com.smhrd.ingredient.model;
+
+public class IngredientsDAO {
+
+}

@@ -1,0 +1,75 @@
+package com.smhrd.member.model;
+
+import java.util.Date;
+
+public class MemberDTO {
+
+	private String mem_id;
+    private String mem_pw;
+    private String mem_name;
+    private String mem_phone;
+    private String mem_email;
+    private String mem_refri;
+    private Date joined_at;
+    
+    
+    
+    
+	public String getMem_id() {
+		return mem_id;
+	}
+	public void setMem_id(String mem_id) {
+		this.mem_id = mem_id;
+	}
+	public String getMem_pw() {
+		return mem_pw;
+	}
+	public void setMem_pw(String mem_pw) {
+		this.mem_pw = mem_pw;
+	}
+	public String getMem_name() {
+		return mem_name;
+	}
+	public void setMem_name(String mem_name) {
+		this.mem_name = mem_name;
+	}
+	public String getMem_phone() {
+		return mem_phone;
+	}
+	public void setMem_phone(String mem_phone) {
+		this.mem_phone = mem_phone;
+	}
+	public String getMem_email() {
+		return mem_email;
+	}
+	public void setMem_email(String mem_email) {
+		this.mem_email = mem_email;
+	}
+	public String getMem_refri() {
+		return mem_refri;
+	}
+	public void setMem_refri(String mem_refri) {
+		this.mem_refri = mem_refri;
+	}
+	public Date getJoined_at() {
+		return joined_at;
+	}
+	public void setJoined_at(Date joined_at) {
+		this.joined_at = joined_at;
+	}
+	public MemberDTO(String mem_id, String mem_pw, String mem_name, String mem_phone, String mem_email,
+			String mem_refri, Date joined_at) {
+		super();
+		this.mem_id = mem_id;
+		this.mem_pw = mem_pw;
+		this.mem_name = mem_name;
+		this.mem_phone = mem_phone;
+		this.mem_email = mem_email;
+		this.mem_refri = mem_refri;
+		this.joined_at = joined_at;
+	}
+	
+	
+	
+	
+}

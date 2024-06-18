@@ -1,0 +1,5 @@
+INDEX VERSION 1.134
+C:\Users\smhrd\Desktop\DBtry\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1649183221.index
+\dbtest\target\generated-sources\annotations
+C:\Users\smhrd\Desktop\핵심프로젝트\Take_care_of_the_fridge\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1649183221.index
+\dbtest\src\main\java

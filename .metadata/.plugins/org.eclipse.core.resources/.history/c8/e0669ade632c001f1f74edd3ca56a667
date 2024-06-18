@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="JoinCon" method="post">
+		<table border="1">
+			<tr align="center">
+				<td> 아이디</td>
+				<td> <input type="text" name="mem_id"> </td>
+			</tr>
+			<tr align="center">
+				<td> 비밀번호</td>
+				<td> <input type="password" name="mem_pw"> </td>
+			</tr>
+			<tr align="center">
+				<td> 이름</td>
+				<td> <input type="text" name="mem_name"> </td>
+			</tr>
+			<tr align="center">
+				<td> 연락처</td>
+				<td> <input type="text" name="mem_phone"> </td>
+			</tr>
+			<tr align="center">
+				<td> 이메일</td>
+				<td> <input type="text" name="mem_email"> </td>
+			</tr>
+			<tr align="center">
+				<td> 회원유형</td>
+				<td> <input type="text" name="mem_type"> </td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"> <input type="submit" value="회원가입"> </td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>
