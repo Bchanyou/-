@@ -68,6 +68,7 @@ nav#gnb > ul > li a:hover {color:#2EC758;}
 .my20 {margin:20px 0;}
 .my30 {margin:30px 0;}
 .my120 {margin:120px 0;}
+.pa30 {padding : 30px;}
 .pa50 {padding:50px;}
 .px50 {padding:0 50px;}
 .px100 {padding:0 100px;}
@@ -97,6 +98,10 @@ nav#gnb > ul > li a:hover {color:#2EC758;}
 #sub_tit p {font-size:18px;font-weight: 400;margin-top:20px;}
 
 /* Sub Content */
+.sub_cont {margin-top:130px;}
+.guide_box {background:#f4f4f4;}
+.ico_info {background: url(../images/sub/circle_info.png) no-repeat 0 3px;padding-left:25px;font-size:16px;font-weight: 600;color:#aaa;background-size:16px;}
+.info_box {display: flex;align-items: center;justify-content: center;background:#f2f2f2;}
 
 
 /* Title */
@@ -111,16 +116,15 @@ nav#gnb > ul > li a:hover {color:#2EC758;}
 
 
 
-
 /*************************************************************************************************
  *  Table
  *************************************************************************************************/
 
+ /* Column Table */
 .bdr_wrap {border-top:3px solid #2EC758;}
 .bdr_wrap th,
 .bdr_wrap td {font-size:20px;border-bottom: 1px solid #ccc;padding:15px 10px;}
 .bdr_wrap table td {text-align: center;}
-.bdr_wrap tr td:nth-child(2) {text-align: left;}
 table .btn_bdr {display: inline-block;}
 table .btn_bdr a {display:inline-block;font-size:18px;color:#888;line-height: 1;padding:10px 20px;border: 1px solid #888;border-radius: 5px;}
 table .btn_bdr a:hover {color:#000;border-color: #000;font-weight: 600;}
@@ -129,6 +133,10 @@ table .btn_bdr a:hover {color:#000;border-color: #000;font-weight: 600;}
 .bdr_wrap.row th,
 .bdr_wrap.row td {border-bottom: none;}
 .bdr_wrap.row th {text-align: left;}
+
+/* Write Table */
+.tb_write {text-align: left;}
+.tb_write th {padding:30px;} 
 
 
 /*************************************************************************************************
@@ -146,6 +154,7 @@ button.w200 {width:200px;}
 .btn_grn {background:#2EC758;color:#fff;}
 .row_del a {display: block;padding:5px;}
 .row_del a img {display: block;}
+.btn_bdr {display:inline-block;font-size:18px;color:#2EC758;border:1px solid #2EC758;border-radius: 5px;padding:0 20px;line-height: 40px;}
 
 
 /*************************************************************************************************

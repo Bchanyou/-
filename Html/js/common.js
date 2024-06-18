@@ -27,8 +27,9 @@ $(function () {
 		event.stopPropagation();
 		$(".drop_sub").slideUp("fast");
 		$('.drop_title').removeClass("active");
-		if (!$(this).next("ul").is(":visible")) {
-			$(this).next("ul").slideDown("fast");
+		if (!$(this).next(".drop_sub").is(":visible")) {
+			$(this).next(".drop_sub").slideDown("fast");
+			$(this).next(".drop_sub").children("p").show();
 			$(this).addClass("active");
 		}
 	});
@@ -71,9 +72,28 @@ $(function () {
 	})
 
 
-	
+	/*-----------------------------------------------------------------------------
+	 *  문의_이미지업로드
+	 *----------------------------------------------------------------------------*/
+
+	function enviarPhoto() {
+		const file = document.querySelector('input')
+		const reader = new FileReader()
+
+		const pictureHtml = document.querySelector('.photo')
+		reader.readAsDataURL(file.files[0])
+
+		reader.onload = file => {
+			const image = file.target.result
+			pictureHtml.classList.add('active')
+			pictureHtml.style.backgroundImage = `url('${image}')`
+		}
+	}
 
 
+	/*-----------------------------------------------------------------------------
+	 *  품목추가_1
+	 *----------------------------------------------------------------------------*/
 
 	// 구매일 설정
 	var today = new Date().toISOString().split('T')[0];
@@ -109,8 +129,9 @@ $(function () {
 });
 
 
+
 /*-----------------------------------------------------------------------------
-*  품목추가
+*  품목추가_2
 *----------------------------------------------------------------------------*/
 
 $(document).ready(function () {
@@ -123,21 +144,22 @@ $(document).ready(function () {
 			// 행이 없을 경우
 			$('.fridge_null').show();
 			$('.check_del').hide();
-			
+
 		} else {
 			// 행이 있을 경우
-			$('.fridge_null').hide(); 
+			$('.fridge_null').hide();
 			$('.check_del').show();
 		}
 	}
 
 	updateFridgeTable(); // 테이블 상태 업데이트
-	
+
 	// 행 추가 및 삭제
 	$(".row_add").click(function () {
 		var rowCnt = $(".add_list tbody tr").length;
 		rowCnt += 1;
-		let rowAdd = $(".add_list tbody").append("<tr><td>" + rowCnt + "</td><td><input type='text' placeholder='품목명 입력'></td><td class='unit'><input type='text'><div class='select_wrap'><select name='unit' class='select' title='품목 단위'><option selected>개</option><option>ml</option></select></div></td><td><input type='number' value='1'></td><td class='date_picker'><input type='date' id='date_buy" + rowCnt + "' class='date_format' onchange='formatDate()'></td><td class='date_picker'><div class='file_wrap'><input type='date' id='date_exp" + rowCnt + "' class='date_format' onchange='formatDate()'><input type='file' id='file" + rowCnt + "' class='inpFile' style='display: none;'><label for='file" + rowCnt + "' class='file_upload'><i class='fa-regular fa-image' style='color: #2ec758;'></i></label></div></td><td><div class='select_wrap loca'><select name='location' class='select' title='보관위치'> <option selected>냉장칸</option><option>야채칸</option><option>날개칸</option></select></div></td><td><div class='row_del'><a href='#;'><img src='/images/sub/delete.png' alt='행 삭제 버튼'></a></div></td></tr>");
+		let rowAdd = $(".add_list tbody").append("<tr><td>" + rowCnt + "</td><td><input type='text' placeholder='품목명 입력'></td><td class='unit'><input type='text'><div class='select_wrap'><select name='unit' class='select' title='품목 단위'><option selected>개</option><option>ml</option></select></div></td><td class='qtt_num'><input type='number' value='1'></td><td class='date_picker'><input type='date' id='date_buy" + rowCnt + "' class='date_format' onchange='formatDate()'></td><td class='date_picker'><input type='date' id='date_exp' class='date_format' onchange='formatDate()'></td><td><div class='select_wrap loca'><select name='location' class='select' title='보관위치'><option selected>냉장칸</option><option>야채칸</option><option>날개칸</option></select></div></td><td><div class='row_del'><a href='#;'><img src='./images/sub/delete.png' alt='행 삭제 버튼'></a></div></td></tr>");
+
 
 		// 행 삭제 버튼 클릭
 		rowAdd.find('.row_del').click(function (e) {
@@ -193,4 +215,7 @@ $(document).ready(function () {
 		});
 	});
 })(jQuery);
+
+
+
 

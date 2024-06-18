@@ -156,7 +156,7 @@
 .select_box {position:relative; display: inline-block; width:150px;height:50px;padding-right: 30px;}
 .select_box select {visibility:hidden;outline:none;}
 .select_box a {font-size: 18px;color:#000;}
-.select_box .select_title { overflow:hidden; position:absolute; top:0;  left:0; padding:0 20px; width:100%;line-height:48px; background:#fff; border:1px solid #ccc; border-radius:5px;-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; -o-user-select:none; user-select:none;text-align: left;}
+.select_box .select_title { overflow:hidden; position:absolute; top:0;  left:0; padding:0 20px; width:100%;line-height:48px; background:#fff; border:1px solid #aaa; border-radius:5px;-webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; -o-user-select:none; user-select:none;text-align: left;}
 .select_box .select_title.open { border-color:#000;}
 .select_box .select_title span {white-space:nowrap;}
 .select_box .select_title .arrow { position:absolute; top:0; right:0; width:30px; height:100%;}
@@ -201,7 +201,7 @@
 .rdo_btn .rdo + label {position: relative;display: inline-block;vertical-align: middle;font-size:14px;line-height:1; color:#444;}
 .rdo_btn .rdo + label:before {content:'';display:inline-block;vertical-align: middle;width:20px;height:20px;border-radius: 50%;border:1px solid #ccc;margin-right: 5px;}
 .rdo_btn .rdo:checked + label {color:#000;}
-.rdo_btn .rdo:checked + label:before {background:#35c5f0 url("../images/icon/radio_on.png") center center;background-size: 20px auto; border-color:#35c5f0; }
+.rdo_btn .rdo:checked + label:before {background:#35c5f0 url("../images/icon/radio_on.png") center center;background-size: 20px auto; border-color:#35c5f0;}
 
 
 /*-----------------------------------------------------------------------------
@@ -221,7 +221,7 @@
  *----------------------------------------------------------------------------*/
 
 /* Basic */
-input {display: inline-block;width:100%;vertical-align: middle;font-size: 18px;font-weight: 500; color: #000;border:1px solid #ccc;padding:0 15px;line-height: 48px;transition: all 0.3s ease;border-radius: 5px;}
+input {display: inline-block;width:100%;vertical-align: middle;font-size: 18px;font-weight: 500; color: #000;border:1px solid #aaa;padding:0 15px;line-height: 48px;transition: all 0.3s ease;border-radius: 5px;}
 
 input[type=text]:focus,
 input[type=number]:focus,
@@ -242,14 +242,16 @@ input.inp_200 {max-width: 200px}
  ********************************************************/
 
 .drop_down {position: relative;}
-.drop_down + .drop_down {margin-top:10px;}
-.drop_title a {position:relative;display:inline-block;width:190px;line-height:38px;padding:0 35px 0 15px;color:#a7b1d6;border:1px solid #4e587d;background:#1a1f31;border-radius: 5px;}
-.drop_title a:after {position:absolute;content:'';display: block;width:5px;height:5px;border:1px solid #a7b1d6;border-width: 0 1px 1px 0;transform: rotate(45deg);top:15px;right:15px;}
+/*.drop_down + .drop_down {margin-top:10px;}*/
+.drop_title a {position:relative;display:flex;color:#000;border-bottom:1px solid #ddd;align-items: center;}
+.drop_title .title_before {display: flex;width:48px;height:48px;border-radius: 50%;background:#2EC758;align-items: center;justify-content: center;}
+.drop_title .title_before span {font-size:22px;color:#fff;}
+.drop_title h4 {font-size:24px;font-weight: 600;margin-left:20px;}
+.drop_title a:after {position:absolute;content:'';display: block;width:15px;height:15px;border:1px solid #000;border-width: 0 3px 3px 0;transform: rotate(45deg);top:45px;right:50px;}
 .drop_title.active a {position:relative;}
-.drop_title.active a:after {transform:rotate(225deg);top:20px;}
-.drop_sub {position: absolute;left:0;bottom:1px;width: 100%; border:1px solid #4e587d;background:#1c2235;z-index: 100; transform: translateY(100%);border-radius: 5px;padding:8px 15px;overflow: hidden;}
-.drop_sub li a {display: block; font-size: 13px; padding: 5px 0;color: #a7b1d6;}
-.drop_sub li a:hover {color:#fff;}
+.drop_title.active a:after {transform:rotate(225deg);top:50px;}
+.drop_sub {width: 100%;min-height:250px;background:#f8f8f8; border-radius: 5px;overflow: hidden;z-index: 100;}
+.drop_sub p {font-size:20px;}
 
 
 /********************************************************
@@ -322,3 +324,4 @@ body ::-webkit-scrollbar-thumb { height: 5px; width: 5px;  -moz-border-radius: 5
 ::-moz-placeholder {color:#aaa;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
 :-ms-input-placeholder {color:#aaa !important;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
 input:-moz-placeholder {color:#aaa;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;font-size:18px;}
+

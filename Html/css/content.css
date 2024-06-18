@@ -29,6 +29,7 @@
 
  /* my냉장고 */
 
+.fridge_list tr td:nth-child(2) {text-align: left;}
 .sv01 {background:url(../images/sub/sv01.jpg) no-repeat center;background-size:cover;}
 .s01_fridge {position:relative;margin: 120px auto;width: 800px;}
 .s01_fridge:before {position:absolute;content:'';display: block;width:650px;height:650px;border-radius: 50%;background:#EFF5F1;top:50%;left:50%;transform: translate(-50%, -50%);z-index: -1;}
@@ -40,14 +41,36 @@
 .add_list .unit .select_wrap .select_box {width:100%;}
 .add_list td input,
 .add_list .select_box a {font-size:16px;}
-.date_picker input[type="date"] {width:130px;}
+.date_picker input[type="date"] {width:160px;}
 .date_picker label {position:relative;display: flex;justify-content: center;align-items: center;}
 .loca .select_box {width:120px;}
-.file_wrap {display: flex;}
-.file_wrap .file_upload {display:inline-block;padding:10px;margin-left:10px;}
-.fridge_null {display: flex;background:#f2f2f2;height:100px;align-items: center;justify-content: center;margin-top:20px;}
-.fridge_null p {font-size:18px;font-weight: 600;color:#444;}
-.ico_info {padding-left:25px;background: url(../images/sub/circle_info.png) no-repeat 0 4px;}
+.null_box {height:150px;}
+.null_box .ico_info {font-size:18px;background-size:18px;background-position: 0 4px;margin:0;}
+.qtt_num input {text-align: center;}
+.file_upload {display:inline-block;width:140px;line-height:56px;font-size:20px;font-weight: 600;border-radius: 5px;text-align: center;}
+.ico_info {margin-top:20px;}
+
+
+ /* 고객센터 */
+
+.sv04 {background:url(../images/sub/sv04.jpg) no-repeat center;background-size:cover;}
+#cs_inquiry h4 {display: inline-block;margin-right:10px;}
+#cs_inquiry tr td:first-child {text-align: left;padding:0 20px;}
+
+
+/* 1:1 문의 작성 */
+#cs_inquiry tr:nth-child(2) th {vertical-align: text-top;}
+#cs_inquiry tr:nth-child(2) td {padding-bottom:50px;}
+#cs_inquiry textarea {resize: none;height:250px;width: 100%;border-color:#aaa;border-radius: 5px;padding:20px;font-size:16px;color:#000;}
+#cs_inquiry textarea:focus {border-color: #2EC758;}
+#file_btn {display: none;}
+.inquiry_imgs {display: flex;}
+.inquiry_imgs ul {display: flex;}
+.inquiry_imgs li {position:relative;width:110px;height:110px;margin-right:10px;}
+.inquiry_imgs li img {position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);}
+.inquiry_imgs .file_btn label {display:flex;width:110px;height:110px;border:1px solid #aaa;border-radius: 5px;align-items: center;justify-content: center;}
+#cs_inquiry p {text-align: left;margin: 0;}
+
 
  /********************************************************
  

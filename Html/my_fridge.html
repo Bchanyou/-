@@ -168,7 +168,7 @@
 
                                 <!-- 보관중인 품목이 없을 경우 보여지는 박스/ 
                                         아래 전체,선택삭제 버튼도 마찬가지 -->
-                                <div class="fridge_null">
+                                <div class="info_box null_box">
                                     <p class="ico_info">보유중인 품목이 없습니다</p>
                                 </div>
 
@@ -187,7 +187,7 @@
                         <!-- 품목추가 팝업창 -->
                         <div class="modal_box w1280 pa50">
 
-                            <div class="imgBlock btn_modal_close"><a href="#;"><img src="/images/sub/modal_close.png"
+                            <div class="imgBlock btn_modal_close"><a href="#;"><img src="./images/sub/modal_close.png"
                                         alt="팝업창 닫기"></a></div>
 
                             <div class="mid_tit">
@@ -203,7 +203,7 @@
                                             <col>
                                             <col width="18%">
                                             <col width="10%">
-                                            <col width="8%">
+                                            <col>
                                             <col>
                                             <col>
                                             <col width="50px">
@@ -233,18 +233,14 @@
                                                         </select>
                                                     </div>
                                                 </td>
-                                                <td>
+                                                <td class="qtt_num">
                                                     <input type="number" value="1">
                                                 </td>
                                                 <td class="date_picker">
                                                     <input type="date" id="date_buy" class="date_format" onchange="formatDate()">
                                                 </td>
                                                 <td class="date_picker">
-                                                    <div class="file_wrap">
-                                                        <input type="date" id="date_exp" class="date_format" onchange="formatDate()">
-                                                        <input type="file" id="file1" class="inpFile" style="display: none;">
-                                                        <label for="file1" class="file_upload"><i class="fa-regular fa-image" style="color: #2ec758;"></i></label>
-                                                    </div>
+                                                    <input type="date" id="date_exp" class="date_format" onchange="formatDate()">
                                                 </td>
                                                 <td>
                                                     <div class="select_wrap loca">
@@ -256,20 +252,27 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <div class="row_del"><a href="#;"><img src="/images/sub/delete.png"
+                                                    <div class="row_del"><a href="#;"><img src="./images/sub/delete.png"
                                                                 alt="행 삭제 버튼"></a></div>
                                                 </td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
+                                <p class="ico_info">상품의 유통기한이 촬영된 사진을 업로드하시면 유통기한이 자동으로 입력됩니다.</p>
                                 <div class="btn_wrap my30">
-                                    <div class="lb"></div>
+                                    
+                                    <div class="lb">
+                                        <label for="file1" class="btn_grn file_upload">사진 업로드</label> 
+                                        <input type="file" id="file1" class="inpFile" style="display: none;">
+                                        
+                                    </div>
                                     <div class="rb">
                                         <button class="btn_bg row_add" type="button">행 추가</button>
                                         <button class="btn_grn" type="submit">완료</button>
                                     </div>
                                 </div>
+                                
                             </form>
                         </div>
                         <!-- // 품목추가 팝업창 -->
