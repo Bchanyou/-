@@ -1,0 +1,7 @@
+INDEX VERSION 1.134+C:\Users\smhrd\Desktop\gitnomommy\.metadata\.plugins\org.eclipse.jdt.core
+4038431948.index
+542746795.index
+824980028.index
+1865797976.index
+4118929504.index
+575459281.index
