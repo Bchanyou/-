@@ -1,0 +1,125 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!doctype html>
+<html lang="ko">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="description" content="ëì¥ê³ ë¥¼ë¶íí´" />
+    <meta name="keywords" content="ëì¥ê³ ë¥¼ë¶íí´" />
+    <meta name="classification" content="ëì¥ê³ ë¥¼ë¶íí´" />
+    <meta name="author" content="ëì¥ê³ ë¥¼ë¶íí´" />
+    <meta name="title" content="ëì¥ê³ ë¥¼ë¶íí´">
+    <meta name="apple-mobile-web-app-title" content="ëì¥ê³ ë¥¼ë¶íí´">
+    <meta name="subject" content="ëì¥ê³ ë¥¼ë¶íí´" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ëì¥ê³ ë¥¼ë¶íí´</title>
+
+    <link rel="shortcut icon" href="images/common/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/common/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/style.css" media="all" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <!-- Header -->
+        <header id="header" class="pdH">
+            <div class="hdr_inner">
+
+                <h1 id="hdr_logo"><a href="/">ë¡ê³ ì´ë¯¸ì§</a></h1>
+
+                <!-- Gnb -->
+                <nav id="gnb">
+                    <ul>
+                        <li>
+                            <div class="menu_dep1"><a href="#">myëì¥ê³ </a></div>
+                            <ol class="menu_dep2">
+                                <li>myëì¥ê³ </li>
+                                <li>íëª© ê´ë¦¬</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <div class="menu_dep1"><a href="#">ë ìí¼</a></div>
+                            <ol class="menu_dep2">
+                                <li>ë ìí¼ ê²ì</li>
+                                <li>ì¶ì² ë ìí¼</li>
+                            </ol>
+                        </li>
+                        <li><a href="#">ì ê¸°êµ¬ë§¤</a></li>
+                        <li>
+                            <div class="menu_dep1"><a href="#">ê³ ê°ì¼í°</a></div>
+                            <ol class="menu_dep2">
+                                <li>FAQ</li>
+                                <li>1:1ë¬¸ì</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- //Gnb -->
+
+                <div class="hdr_util">
+                    <ul>
+                        <li style="display: none;"><a href="#">ë§ì´íì´ì§</a></li>
+                        <li class="btn_logout" style="display: none;"><a href="MemberLogoutCon">ë¡ê·¸ìì</a></li>
+                        <li><a href="MemberLoginCon">ë¡ê·¸ì¸</a></li>
+                        <li><a href="MemberJoinCon">íìê°ì</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </header>
+        <!-- //Header -->
+
+
+        <!-- container -->
+        <main id="container">
+            <section id="visual">
+                ë¹ì£¼ì¼
+            </section>
+            <section id="content">
+                <section class="cont1">
+                    <h1>ë©ì¸ ë´ì©1</h1>
+                </section>
+                <section class="cont2">ë©ì¸ ë´ì©2</section>
+                <section class="cont3">
+                </section>
+            </section>
+        </main>
+        <!-- //container -->
+
+        <!-- Footer -->
+        <footer id="footer" class="pdH">
+            <div class="ftr_inner">
+                <address>
+                    <span>ëíì : íê¸¸ë</span>
+                    <span>ì¬ììë±ë¡ë²í¸ : 000-00-0000</span>
+                    <span>ì£¼ì : ê´ì£¼ê´ì­ì ëêµ¬ ìì ê¸¸</span>
+                    <span>ëíì í : 00-000-0000</span>
+                    <span>í©ì¤ : 00-000-0000</span>
+                </address>
+                <p class="copyright">Copyright @ 2024 by Connected Inc. All Rights Reserved.</p>
+            </div>
+        </footer>
+        <!-- //Footer -->
+
+    </div>
+
+</body>
+
+</html>

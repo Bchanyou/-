@@ -1,0 +1,126 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!doctype html>
+<html lang="ko">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="description" content="냉장고를부탁해" />
+    <meta name="keywords" content="냉장고를부탁해" />
+    <meta name="classification" content="냉장고를부탁해" />
+    <meta name="author" content="냉장고를부탁해" />
+    <meta name="title" content="냉장고를부탁해">
+    <meta name="apple-mobile-web-app-title" content="냉장고를부탁해">
+    <meta name="subject" content="냉장고를부탁해" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>냉장고를부탁해</title>
+
+    <link rel="shortcut icon" href="images/common/favicon.png" type="image/x-icon">
+    <link rel="icon" href="images/common/favicon.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/style.css" media="all" />
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/common.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <!-- Header -->
+        <header id="header" class="pdH">
+            <div class="hdr_inner">
+
+                <h1 id="hdr_logo"><a href="/">로고이미지</a></h1>
+
+                <!-- Gnb -->
+                <nav id="gnb">
+                    <ul>
+                        <li>
+                            <div class="menu_dep1"><a href="#">my냉장고</a></div>
+                            <ol class="menu_dep2">
+                                <li>my냉장고</li>
+                                <li>품목 관리</li>
+                            </ol>
+                        </li>
+                        <li>
+                            <div class="menu_dep1"><a href="#">레시피</a></div>
+                            <ol class="menu_dep2">
+                                <li>레시피 검색</li>
+                                <li>추천 레시피</li>
+                            </ol>
+                        </li>
+                        <li><a href="#">정기구매</a></li>
+                        <li>
+                            <div class="menu_dep1"><a href="#">고객센터</a></div>
+                            <ol class="menu_dep2">
+                                <li>FAQ</li>
+                                <li>1:1문의</li>
+                            </ol>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- //Gnb -->
+
+                <div class="hdr_util">
+                    <ul>
+                        <li><a href="#">마이페이지</a></li>
+                        <li><a href="#">장바구니</a></li>
+                        <li><a href="MemberLogoutCon">로그인</a></li>
+                        <li><a href="MemberLoginCon">로그인</a></li>
+                        <li><a href="MemberJoinCon">회원가입</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </header>
+        <!-- //Header -->
+
+
+        <!-- container -->
+        <main id="container">
+            <section id="visual">
+                비주얼
+            </section>
+            <section id="content">
+                <section class="cont1">
+                    <h1>메인 내용1</h1>
+                </section>
+                <section class="cont2">메인 내용2</section>
+                <section class="cont3">
+                </section>
+            </section>
+        </main>
+        <!-- //container -->
+
+        <!-- Footer -->
+        <footer id="footer" class="pdH">
+            <div class="ftr_inner">
+                <address>
+                    <span>대표자 : 홍길동</span>
+                    <span>사업자등록번호 : 000-00-0000</span>
+                    <span>주소 : 광주광역시 동구 예술길</span>
+                    <span>대표전화 : 00-000-0000</span>
+                    <span>팩스 : 00-000-0000</span>
+                </address>
+                <p class="copyright">Copyright @ 2024 by Connected Inc. All Rights Reserved.</p>
+            </div>
+        </footer>
+        <!-- //Footer -->
+
+    </div>
+
+</body>
+
+</html>

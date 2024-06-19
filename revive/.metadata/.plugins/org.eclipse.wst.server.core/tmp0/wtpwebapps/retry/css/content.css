@@ -1,0 +1,91 @@
+@charset "utf-8";
+
+/*
+ * File Name : content.css
+ * 작성일 : 2024-06-14
+ */
+
+
+/********************************************************
+ 
+ *  Main
+ 
+ ********************************************************/
+
+/*---------------------------------------------------------------------------------------------------------------------------
+  Visual
+----------------------------------------------------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------------------------------------------------
+  Content
+----------------------------------------------------------------------------------------------------------------------------*/
+
+
+/********************************************************
+ 
+ *  Sub
+ 
+ ********************************************************/
+
+ /* my냉장고 */
+
+.sv01 {background:url(../images/sub/sv01.jpg) no-repeat center;background-size:cover;}
+.s01_fridge {position:relative;margin: 120px auto;width: 800px;}
+.s01_fridge:before {position:absolute;content:'';display: block;width:650px;height:650px;border-radius: 50%;background:#EFF5F1;top:50%;left:50%;transform: translate(-50%, -50%);z-index: -1;}
+.mid_tit.loca h4 {display: flex;align-items: center;}
+.mid_tit.loca h4 span {display: inline-block;width:40px;height:40px;background:#2EC758;border-radius: 50%;color:#fff;font-size:22px;line-height: 43px;text-align: center;margin-right:10px;}
+.add_list .unit {font-size:0;}
+.add_list .unit input {width:49%;}
+.add_list .unit .select_wrap {width:49%;margin-left:2%;}
+.add_list .unit .select_wrap .select_box {width:100%;}
+.add_list td input,
+.add_list .select_box a {font-size:16px;}
+.date_picker input[type="date"] {width:130px;}
+.date_picker label {position:relative;display: flex;justify-content: center;align-items: center;}
+.loca .select_box {width:120px;}
+.fridge_null {display: flex;background:#f2f2f2;height:100px;align-items: center;justify-content: center;margin-top:20px;}
+.fridge_null .ico_info {font-size:18px;background-size:18px;background-position: 0 4px;}
+.qtt_num input {text-align: center;}
+.file_upload {display:inline-block;width:140px;line-height:56px;font-size:20px;font-weight: 600;border-radius: 5px;text-align: center;}
+.ico_info {margin-top:20px;}
+
+
+
+
+ /* 고객센터 */
+
+ .sv04 {background:url(../images/sub/sv04.jpg) no-repeat center;background-size:cover;}
+
+
+
+
+
+
+ /********************************************************
+ 
+ *  Util Page
+ 
+ ********************************************************/
+
+.util_page {display: flex;flex-direction:column;align-items: center;justify-content: center;background-color: #F8F8F8;}
+#util_box .big_tit {margin-bottom:40px;}
+#util_box .bdr_wrap {width: 780px;background: #fff;box-shadow: 10px 10px 20px rgba(0, 0, 0, .1);border-radius: 10px;padding:60px 100px;overflow: hidden;}
+
+
+ /* Join */
+ #util_box td.disf {display: flex;}
+ input[name="mail"] + span {line-height: 48px;margin:0 5px;}
+ button.un_check {min-width:140px;margin-left:10px;}
+
+ 
+ /* Login */
+ .login_btns {display: flex;justify-content: space-between;padding:0 20px;}
+ .login_btns .rb {padding-top:7px;}
+ .login_btns .rb span + span:before {display: inline-block;vertical-align: middle;content:'';width:1px;height:13px;background:#888;margin:0 10px;}
+ .login_btns .rb a {font-size:15px;padding:3px;}
+ .login_btns .rb a:hover {color:#000;}
+ #login .btn_wrap * {width:100%;}
+ #login .btn_wrap {flex-direction: column;}
+ #login .btn_wrap a {display: block;}
+ #login .btn_wrap a + a:before {content:'';display:block;width:100%;height:1px;background:#ddd;margin:20px 0;}
+  

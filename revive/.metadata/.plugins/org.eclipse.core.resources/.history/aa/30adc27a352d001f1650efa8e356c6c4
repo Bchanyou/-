@@ -1,0 +1,5 @@
+package com.smhrd.member.database;
+
+public interface MemberMapper {
+
+}

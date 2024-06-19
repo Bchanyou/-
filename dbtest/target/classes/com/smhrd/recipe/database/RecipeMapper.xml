@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 순수 sql문만 작성 xml 하나가 아닐 수도 있다: 여러개 만들어도 무관(테이블 마다 1개의 mapper) -->
+
+<mapper namespace="com.smhrd.recipe.database.MemberMapper">
+
+</mapper>
