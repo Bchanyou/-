@@ -33,7 +33,8 @@
 	</delete>
 	
 	<!-- 회원정보 수정 -->
-	<update id="updateMember" parameterType="com.smhrd.member.model.MemberDTO">
+	<update id="updateMember"
+		parameterType="com.smhrd.member.model.MemberDTO">
 		update members
 		set mem_pw=#{mem_pw}, mem_name=#{mem_name}, mem_phone=#{mem_phone}, mem_email=#{mem_email}
 		where mem_id=#{mem_id}

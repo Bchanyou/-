@@ -60,12 +60,6 @@
 		<description></description>
 		<servlet-class>com.smhrd.member.controller.MemberEmailCheckCon</servlet-class>
 	</servlet>
-	<servlet>
-		<servlet-name>MemberEditCon</servlet-name>
-		<display-name>MemberEditCon</display-name>
-		<description></description>
-		<servlet-class>com.smhrd.member.controller.MemberEditCon</servlet-class>
-	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>MemberJoinCon</servlet-name>
@@ -98,9 +92,5 @@
 	<servlet-mapping>
 		<servlet-name>MemberEmailCheckCon</servlet-name>
 		<url-pattern>/MemberEmailCheckCon</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>MemberEditCon</servlet-name>
-		<url-pattern>/MemberEditCon</url-pattern>
 	</servlet-mapping>
 </web-app>
