@@ -29,7 +29,7 @@
 	<!-- 회원탈퇴 -->
 	<delete id="deletMember"
 		parameterType="String">
-		delete from members where mem_email=#{mem_email}
+		delete from members where mem_id=#{mem_id}
 	</delete>
 	
 	<!-- 회원정보 수정 -->

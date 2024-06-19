@@ -18,17 +18,19 @@ public class MemberEditCon extends HttpServlet {
 			throws ServletException, IOException {
 
 		// 1. 한글 인코딩
-		// 데이터를 가져오기 전에 데이터 전송 방식이 Post라면 인코딩 설정
 		request.setCharacterEncoding("UTF-8");
 
 		// 2. 데이터 가지고 오기
-		//email정보는 어디에서 가져와야 하는지: session
+		//로그인정보는 어디에서 가져와야 하는지: session
 		HttpSession session = request.getSession();// 세션 생성
 		MemberDTO member=(MemberDTO)session.getAttribute("loginMember");
 		
 		String id=member.getMem_id();
 		String pw=member.getMem_pw();
+		
+		
 		String mem_id = request.getParameter("id");
+		//login.jsp 참고해서 id칸 자동으로 채우기 구현
 		String mem_pw= request.getParameter("pw");
 		String mem_pw_new = request.getParameter("pw_new");
 		String mem_pw_check = request.getParameter("pw_new_check");

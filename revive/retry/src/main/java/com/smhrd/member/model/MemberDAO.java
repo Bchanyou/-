@@ -153,7 +153,36 @@ public class MemberDAO {
 		return cnt;
 	}// 회원정보 수정 끝
 
+	// 회원 탈퇴
+	public int delete(String deleteId) {
+		SqlSession sqlSession = factory.openSession(true);
+		int cnt = 0;
+		try {
+			cnt = sqlSession.delete("com.smhrd.member.database.MemberMapper.deletMember", deleteId);
+			if(cnt>0) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			System.out.println("삭제실패");
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+
+		return cnt;
+
+	}//회원 탈퇴 끝
+	
+	
+	
+	
+	
+	
+	
 	public MemberDTO selectMember(MemberDTO memberDTO) {
 		return null;
 	}
+
 }
