@@ -9,7 +9,7 @@
 <properties resource="com/smhrd/board/database/db.properties"></properties>
 <!-- 맵퍼에 있는 파라미터 타입 패키지 주소 축약 -->
 <typeAliases>
-	<typeAlias type="com.smhrd.board.model.MemberDTO" alias="BoardDTO"/>
+	<typeAlias type="com.smhrd.board.model.BoardDTO" alias="BoardDTO"/>
 </typeAliases>
   <environments default="development">
     <environment id="development">

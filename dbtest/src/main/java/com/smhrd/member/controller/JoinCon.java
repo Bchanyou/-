@@ -21,20 +21,20 @@ public class JoinCon extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 		// 2. 데이터 가지고 오기
-		String mem_id = request.getParameter("mem_id");
-		String mem_pw = request.getParameter("mem_pw");
-		String mem_pw_check = request.getParameter("mem_pw_check");
-		String mem_name = request.getParameter("mem_name");
-		String mem_phone = request.getParameter("mem_phone");
-		String mem_email = request.getParameter("mem_email");
+		String mem_id = request.getParameter("id");
+		String mem_pw = request.getParameter("pw");
+		String mem_pw_check = request.getParameter("pw_check");
+		String mem_name = request.getParameter("name");
+		String mem_phone = request.getParameter("phone");
+		String mem_email = request.getParameter("email");
 		String joinAtString = request.getParameter("joinAt");
-		String mem_type = request.getParameter("mem_type");
+//		String mem_type = request.getParameter("type");
 
 		// 현재 시간 가져오기
 		LocalDateTime joined_At = null;
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
-		if (mem_pw_check.equals(mem_pw)) {
+		if (mem_pw_check != null && mem_pw_check.equals(mem_pw)) {
 
 			try {
 				if (joinAtString != null && !joinAtString.isEmpty()) {
@@ -48,7 +48,7 @@ public class JoinCon extends HttpServlet {
 			}
 
 			// MemberDTO 객체 생성 및 데이터 설정
-			MemberDTO member = new MemberDTO(mem_id, mem_pw, mem_name, mem_phone, mem_email, joined_At, mem_type);
+			MemberDTO member = new MemberDTO(mem_id, mem_pw, mem_name, mem_phone, mem_email, joined_At, null);
 
 			// MemberDAO 객체 생성 및 회원 가입 처리
 			MemberDAO dao = new MemberDAO();
