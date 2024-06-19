@@ -226,8 +226,8 @@ input {display: inline-block;width:100%;vertical-align: middle;font-size: 18px;f
 input[type=text]:focus,
 input[type=number]:focus,
 input[type=password]:focus {border-color:#2EC758;}
+input[disabled] {background:#eee;}
 /* input[readonly] {background:#fcfcfc;}
-input[disabled] {background:#f8f8f8;}
 input[readonly]:focus {border-color:#ccc;} */
 
 /* Size */

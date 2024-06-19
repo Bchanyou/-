@@ -100,31 +100,17 @@ $(function () {
 	var dateInput = document.getElementById('date_buy');
 	dateInput.value = today;
 
-	// yy-mm-dd 포맷
-	function formatDate() {
+	// 선택 단위가 ml일 경우 입력 비활성화
+	$('td.unit select').on('change', function () {
+		const selectedValue = $(this).val();
+		const unitInput = $(this).closest('td.unit').find('input');
 
-		var input = document.getElementsByClassName("date_format");
-
-		// Get the selected date (YYYY-MM-DD format)
-		var selectedDate = input[0].value;
-		console.log(selectedDate)
-
-		// Split the date string by "-"
-		var parts = selectedDate.split("-");
-
-		// Extract year, month, and day
-		var year = parts[0].substring(2); // Get last two digits of the year
-		var month = parts[1];
-		var day = parts[2];
-
-		// Format the date as 24-06-17
-		var formattedDate = year + "-" + month + "-" + day;
-		console.log(formattedDate)
-
-		// Display the formatted date
-		// document.getElementsByClassName("date_format")[0].value = formattedDate;
-	}
-
+		if (selectedValue === 'ml') {
+			unitInput.prop('disabled', false);
+		} else {
+			unitInput.prop('disabled', true);
+		}
+	});
 
 });
 
@@ -160,7 +146,6 @@ $(document).ready(function () {
 		rowCnt += 1;
 		let rowAdd = $(".add_list tbody").append("<tr><td>" + rowCnt + "</td><td><input type='text' placeholder='품목명 입력'></td><td class='unit'><input type='text'><div class='select_wrap'><select name='unit' class='select' title='품목 단위'><option selected>개</option><option>ml</option></select></div></td><td class='qtt_num'><input type='number' value='1'></td><td class='date_picker'><input type='date' id='date_buy" + rowCnt + "' class='date_format' onchange='formatDate()'></td><td class='date_picker'><input type='date' id='date_exp' class='date_format' onchange='formatDate()'></td><td><div class='select_wrap loca'><select name='location' class='select' title='보관위치'><option selected>냉장칸</option><option>야채칸</option><option>날개칸</option></select></div></td><td><div class='row_del'><a href='#;'><img src='./images/sub/delete.png' alt='행 삭제 버튼'></a></div></td></tr>");
 
-
 		// 행 삭제 버튼 클릭
 		rowAdd.find('.row_del').click(function (e) {
 			e.preventDefault(); // 기본 동작 방지
@@ -185,9 +170,11 @@ $(document).ready(function () {
 })
 
 
+
+
 /*-----------------------------------------------------------------------------
- *  Select
- *----------------------------------------------------------------------------*/
+*  Select
+*----------------------------------------------------------------------------*/
 
 /*
  * Project: Select_box

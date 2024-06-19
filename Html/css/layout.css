@@ -98,7 +98,7 @@ nav#gnb > ul > li a:hover {color:#2EC758;}
 #sub_tit p {font-size:18px;font-weight: 400;margin-top:20px;}
 
 /* Sub Content */
-.sub_cont {margin-top:130px;}
+.sub_cont {margin-top:100px;margin-bottom:120px;}
 .guide_box {background:#f4f4f4;}
 .ico_info {background: url(../images/sub/circle_info.png) no-repeat 0 3px;padding-left:25px;font-size:16px;font-weight: 600;color:#aaa;background-size:16px;}
 .info_box {display: flex;align-items: center;justify-content: center;background:#f2f2f2;}

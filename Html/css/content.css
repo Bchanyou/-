@@ -37,7 +37,7 @@
 .mid_tit.loca h4 span {display: inline-block;width:40px;height:40px;background:#2EC758;border-radius: 50%;color:#fff;font-size:22px;line-height: 43px;text-align: center;margin-right:10px;}
 .add_list .unit {font-size:0;}
 .add_list .unit input {width:49%;}
-.add_list .unit .select_wrap {width:49%;margin-left:2%;}
+.add_list .unit .select_wrap {width:49%;margin-right:2%;}
 .add_list .unit .select_wrap .select_box {width:100%;}
 .add_list td input,
 .add_list .select_box a {font-size:16px;}

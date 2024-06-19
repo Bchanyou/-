@@ -225,22 +225,22 @@
                                                 <td>1</td>
                                                 <td><input type="text" placeholder="품목명 입력"></td>
                                                 <td class="unit">
-                                                    <input type="text">
                                                     <div class="select_wrap">
-                                                        <select name="unit" class="select" title="품목 단위">
+                                                        <select name="unit" class="select" id="slt_unit" title="품목 단위">
                                                             <option selected>개</option>
-                                                            <option>ml</option>
+                                                            <option id="slt_ml">ml</option>
                                                         </select>
                                                     </div>
+                                                    <input type="text" class="unit_input" disabled>
                                                 </td>
                                                 <td class="qtt_num">
                                                     <input type="number" value="1">
                                                 </td>
                                                 <td class="date_picker">
-                                                    <input type="date" id="date_buy" class="date_format" onchange="formatDate()">
+                                                    <input type="date" id="date_buy" class="date_format">
                                                 </td>
                                                 <td class="date_picker">
-                                                    <input type="date" id="date_exp" class="date_format" onchange="formatDate()">
+                                                    <input type="date" id="date_exp" class="date_format">
                                                 </td>
                                                 <td>
                                                     <div class="select_wrap loca">
