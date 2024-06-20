@@ -47,14 +47,13 @@
 </head>
 
 <body>
-
     <div id="wrap">
 
         <!-- Header -->
-        <header id="header" class="pdH">
+        <header id="header" class="px50">
             <div class="hdr_inner">
 
-                <h1 id="hdr_logo"><a href="/">로고이미지</a></h1>
+                <h1 id="hdr_logo"><a href="/"><strong><span>냉장고를 </span>부탁해</strong></a></h1>
 
                 <!-- Gnb -->
                 <nav id="gnb">
@@ -87,8 +86,8 @@
 
                 <div class="hdr_util">
                     <ul>
-                        <li><a href="#">마이페이지</a></li>
-                        <li><a href="#">장바구니</a></li>
+                        <li style="display: none;"><a href="#">마이페이지</a></li>
+                        <li style="display: none;"><a href="#">로그아웃</a></li>
                         <li><a href="#">로그인</a></li>
                         <li><a href="#">회원가입</a></li>
                     </ul>
@@ -99,21 +98,63 @@
         <!-- //Header -->
 
 
-        <!-- container -->
-        <main id="container">
-            <section id="visual">
-                비주얼
+        <!-- Util Page -->
+        <main class="py120 util_page">
+
+            <section id="util_box">
+
+                <div class="big_tit">
+                    <h3><strong class="font">아이디 찾기</strong></h3>
+                </div>
+
+                <!-- Form_Find_ID -->
+                <form class="tb_wrap" method="post" action="" name="">
+                    <div class="bdr_wrap row">
+
+                        <p class="find_guide">회원님의 소중한 개인정보 보호를 위하여 본인확인이 필요합니다.</br>회원가입 시 등록한 이름과 이메일을 입력해 주세요.</p>
+
+                        <table>
+                            <caption>아이디 찾기</caption>
+                            <colgroup>
+                                <col width="25%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>아이디</th>
+                                    <td>
+                                        <input type="text" name="id" maxlength="50" placeholder="아이디를 입력해주세요" autofocus>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>이메일</th>
+                                    <td class="disf">
+                                        <input type="text" name="mail" placeholder="이메일을 입력해주세요.">
+                                        <span>@</span>
+                                        <div class="select_wrap">
+                                            <select name="slt_mail" class="select">
+                                                <option selected>선택하세요</option>
+                                                <option>naver.com</option>
+                                                <option>gmail.com</option>
+                                                <option>daum.net</option>
+                                            </select>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="btn_wrap center my30">
+                            <button type="submit" class="btn grn w200">아이디 찾기</button>
+                        </div>
+
+                    </div>
+                </form>
+                <!-- //Form_Find_ID -->
+
             </section>
-            <section id="content">
-                <section class="cont1">
-                    <h1>메인 내용1</h1>
-                </section>
-                <section class="cont2">메인 내용2</section>
-                <section class="cont3">
-                </section>
-            </section>
+
         </main>
-        <!-- //container -->
+        <!-- // Util Page -->
 
         <!-- Footer -->
         <footer id="footer" class="pdH">
@@ -131,7 +172,7 @@
         <!-- //Footer -->
 
     </div>
-
 </body>
+
 
 </html>

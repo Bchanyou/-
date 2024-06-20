@@ -47,14 +47,13 @@
 </head>
 
 <body>
-
     <div id="wrap">
 
         <!-- Header -->
-        <header id="header" class="pdH">
+        <header id="header" class="px50">
             <div class="hdr_inner">
 
-                <h1 id="hdr_logo"><a href="/">로고이미지</a></h1>
+                <h1 id="hdr_logo"><a href="/"><strong><span>냉장고를 </span>부탁해</strong></a></h1>
 
                 <!-- Gnb -->
                 <nav id="gnb">
@@ -87,8 +86,8 @@
 
                 <div class="hdr_util">
                     <ul>
-                        <li><a href="#">마이페이지</a></li>
-                        <li><a href="#">장바구니</a></li>
+                        <li style="display: none;"><a href="#">마이페이지</a></li>
+                        <li style="display: none;"><a href="#">로그아웃</a></li>
                         <li><a href="#">로그인</a></li>
                         <li><a href="#">회원가입</a></li>
                     </ul>
@@ -99,21 +98,32 @@
         <!-- //Header -->
 
 
-        <!-- container -->
-        <main id="container">
-            <section id="visual">
-                비주얼
+        <!-- Util Page -->
+        <main class="py120 util_page">
+
+            <section id="util_box">
+
+                <div class="big_tit">
+                    <h3><strong>아이디 찾기 완료</strong></h3>
+                </div>
+
+                <div class="bdr_wrap">
+                    <div class="find_result">
+
+                        <!-- 이름, 아이디 반환 -->
+                        <p class="font">{userName}님의 아이디는 &#34;<strong>{userId}</strong>&#34; 입니다.</p>
+
+                    </div>
+                    <div class="btn_wrap center my30">
+                        <a href="#" class="btn bdr w200">비밀번호 찾기</a>
+                        <a href="#" class="btn grn w200">로그인 하기</a>
+                    </div>
+                </div>
+
             </section>
-            <section id="content">
-                <section class="cont1">
-                    <h1>메인 내용1</h1>
-                </section>
-                <section class="cont2">메인 내용2</section>
-                <section class="cont3">
-                </section>
-            </section>
+
         </main>
-        <!-- //container -->
+        <!-- // Util Page -->
 
         <!-- Footer -->
         <footer id="footer" class="pdH">
@@ -130,8 +140,9 @@
         </footer>
         <!-- //Footer -->
 
-    </div>
 
+    </div>
 </body>
+
 
 </html>

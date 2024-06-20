@@ -27,11 +27,8 @@
 
     <title>냉장고를부탁해</title>
 
-    <!--Favicon-->
-    <link rel="shortcut icon" href="images/common/favicon.png" type="image/x-icon">
-    <link rel="icon" href="images/common/favicon.png" type="image/x-icon">
-
     <!--Add Css-->
+    <link rel="stylesheet" href="css/swiper.min.css" media="all" />
 
     <!--Basic Css-->
     <link rel="stylesheet" href="css/style.css" media="all" />
@@ -41,15 +38,12 @@
 
     <!--Add Js-->
     <script src="https://kit.fontawesome.com/b9310abc97.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/swiper.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/slider.js" charset="utf-8"></script>
 
     <!--Basic Js-->
     <script type="text/javascript" src="js/common.js" charset="utf-8"></script>
 
-    <!-- <link rel="stylesheet" href="css/jquery-ui.min.css">
-    <script type="text/javascript" src="js/jquery-ui.min.js" charset="utf-8"></script> -->
-    <script>
-        
-    </script>
 
 </head>
 
@@ -177,8 +171,8 @@
                             <div class="btn_wrap my30">
                                 <div class="lb"></div>
                                 <div class="rb">
-                                    <button class="btn_bg check_del" type="button">선택삭제</button>
-                                    <button class="btn_grn btn_modal" type="button">품목추가</button>
+                                    <button class="btn bg check_del" type="button">선택삭제</button>
+                                    <button class="btn grn btn_modal" type="button">품목추가</button>
                                 </div>
                             </div>
 
@@ -226,7 +220,7 @@
                                                 <td><input type="text" placeholder="품목명 입력"></td>
                                                 <td class="unit">
                                                     <div class="select_wrap">
-                                                        <select name="unit" class="select" id="slt_unit" title="품목 단위">
+                                                        <select name="unit" class="select" title="품목 단위">
                                                             <option selected>개</option>
                                                             <option id="slt_ml">ml</option>
                                                         </select>
@@ -261,19 +255,25 @@
                                 </div>
                                 <p class="ico_info">상품의 유통기한이 촬영된 사진을 업로드하시면 유통기한이 자동으로 입력됩니다.</p>
                                 <div class="btn_wrap my30">
-                                    
+
                                     <div class="lb">
-                                        <label for="file1" class="btn_grn file_upload">사진 업로드</label> 
+                                        <label for="file1" class="btn grn file_upload">사진 업로드</label>
                                         <input type="file" id="file1" class="inpFile" style="display: none;">
-                                        
+
                                     </div>
                                     <div class="rb">
-                                        <button class="btn_bg row_add" type="button">행 추가</button>
-                                        <button class="btn_grn" type="submit">완료</button>
+                                        <button class="btn bg row_add" type="button">행 추가</button>
+                                        <button class="btn grn" type="submit">완료</button>
                                     </div>
                                 </div>
-                                
+
                             </form>
+                            <script>
+                                // 구매일 설정
+                                var today = new Date().toISOString().split('T')[0];
+                                var dateInput = document.getElementById('date_buy');
+                                dateInput.value = today;
+                            </script>
                         </div>
                         <!-- // 품목추가 팝업창 -->
 

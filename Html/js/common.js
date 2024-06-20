@@ -11,6 +11,7 @@
  
  ********************************************************/
 
+
 $(function () {
 
 	"use strict";
@@ -91,16 +92,47 @@ $(function () {
 	}
 
 
+
+
+
+
+
+	/*Document Ready End----------------------------------------------------*/
+
+
+
+});
+
+
+/*-----------------------------------------------------------------------------
+
+*  Sub01 : My냉장고
+
+*----------------------------------------------------------------------------*/
+
+document.addEventListener('DOMContentLoaded', function () {
+
+
 	/*-----------------------------------------------------------------------------
-	 *  품목추가_1
-	 *----------------------------------------------------------------------------*/
+	*  품목리스트
+	*----------------------------------------------------------------------------*/
 
-	// 구매일 설정
-	var today = new Date().toISOString().split('T')[0];
-	var dateInput = document.getElementById('date_buy');
-	dateInput.value = today;
+	var rowCount = $('.fridge_list tbody tr').length;
+	if (rowCount === 0) {
+		// 행이 없을 경우
+		$('.fridge_null').show();
+		$('.check_del').hide();
+	} else {
+		// 행이 있을 경우
+		$('.fridge_null').hide();
+		$('.check_del').show();
+	}
 
-	// 선택 단위가 ml일 경우 입력 비활성화
+	/*-----------------------------------------------------------------------------
+	*  품목추가(팝업창)
+	*----------------------------------------------------------------------------*/
+
+	// 품목 단위가 ml일 경우 입력 비활성화
 	$('td.unit select').on('change', function () {
 		const selectedValue = $(this).val();
 		const unitInput = $(this).closest('td.unit').find('input');
@@ -112,52 +144,152 @@ $(function () {
 		}
 	});
 
-});
+	// 품목 행 추가
+	const addRowButton = document.querySelector('.row_add');
 
+	addRowButton.addEventListener('click', function () {
 
+		const tbody = document.querySelector('.add_list tbody');
+		const newRow = document.createElement('tr');
 
-/*-----------------------------------------------------------------------------
-*  품목추가_2
-*----------------------------------------------------------------------------*/
+		// No. 열
+		const tdNo = document.createElement('td');
+		tdNo.textContent = tbody.children.length + 1;
+		newRow.appendChild(tdNo);
 
-$(document).ready(function () {
+		// 품목명 열
+		const tdItemName = document.createElement('td');
+		const inputItemName = document.createElement('input');
+		inputItemName.type = 'text';
+		inputItemName.placeholder = '품목명 입력';
+		tdItemName.appendChild(inputItemName);
+		newRow.appendChild(tdItemName);
 
-	// 테이블 상태 업데이트 함수
-	function updateFridgeTable() {
-		var rowCount = $('.fridge_list tbody tr').length;
-		console.log(rowCount)
-		if (rowCount === 0) {
-			// 행이 없을 경우
-			$('.fridge_null').show();
-			$('.check_del').hide();
+		// 단위 열
+		const tdUnit = document.createElement('td');
+		const divUnit = document.createElement('div');
+		divUnit.classList.add('select_wrap');
+		const selectUnit = document.createElement('select');
+		selectUnit.name = 'unit';
+		selectUnit.classList.add('select');
+		selectUnit.title = '품목 단위';
+		const option1 = document.createElement('option');
+		option1.textContent = '개';
+		option1.selected = true;
+		const option2 = document.createElement('option');
+		option2.textContent = 'ml';
+		selectUnit.appendChild(option1);
+		selectUnit.appendChild(option2);
+		divUnit.appendChild(selectUnit);
+		const inputUnitInput = document.createElement('input');
+		inputUnitInput.type = 'text';
+		inputUnitInput.classList.add('unit_input');
+		inputUnitInput.disabled = true;
+		tdUnit.className = 'unit';
+		tdUnit.appendChild(divUnit);
+		tdUnit.appendChild(inputUnitInput);
+		newRow.appendChild(tdUnit);
 
-		} else {
-			// 행이 있을 경우
-			$('.fridge_null').hide();
-			$('.check_del').show();
-		}
-	}
+		// 수량 열
+		const tdQuantity = document.createElement('td');
+		const inputQuantity = document.createElement('input');
+		tdQuantity.className = 'qtt_num';
+		inputQuantity.type = 'number';
+		inputQuantity.value = '1';
+		tdQuantity.appendChild(inputQuantity);
+		newRow.appendChild(tdQuantity);
 
-	updateFridgeTable(); // 테이블 상태 업데이트
+		// 구매날짜 열
+		const tdPurchaseDate = document.createElement('td');
+		const inputPurchaseDate = document.createElement('input');
+		inputPurchaseDate.type = 'date';
+		inputPurchaseDate.classList.add('date_format');
+		tdPurchaseDate.appendChild(inputPurchaseDate);
+		newRow.appendChild(tdPurchaseDate);
 
-	// 행 추가 및 삭제
-	$(".row_add").click(function () {
-		var rowCnt = $(".add_list tbody tr").length;
-		rowCnt += 1;
-		let rowAdd = $(".add_list tbody").append("<tr><td>" + rowCnt + "</td><td><input type='text' placeholder='품목명 입력'></td><td class='unit'><input type='text'><div class='select_wrap'><select name='unit' class='select' title='품목 단위'><option selected>개</option><option>ml</option></select></div></td><td class='qtt_num'><input type='number' value='1'></td><td class='date_picker'><input type='date' id='date_buy" + rowCnt + "' class='date_format' onchange='formatDate()'></td><td class='date_picker'><input type='date' id='date_exp' class='date_format' onchange='formatDate()'></td><td><div class='select_wrap loca'><select name='location' class='select' title='보관위치'><option selected>냉장칸</option><option>야채칸</option><option>날개칸</option></select></div></td><td><div class='row_del'><a href='#;'><img src='./images/sub/delete.png' alt='행 삭제 버튼'></a></div></td></tr>");
+		// 유통기한 열
+		const tdExpiryDate = document.createElement('td');
+		const inputExpiryDate = document.createElement('input');
+		inputExpiryDate.type = 'date';
+		inputExpiryDate.classList.add('date_format');
+		tdExpiryDate.appendChild(inputExpiryDate);
+		newRow.appendChild(tdExpiryDate);
 
-		// 행 삭제 버튼 클릭
-		rowAdd.find('.row_del').click(function (e) {
-			e.preventDefault(); // 기본 동작 방지
-			$(this).closest('tr').remove(); // 해당 행 삭제
-			updateRowCnt(); // 행 삭제 후 행 번호 업데이트
+		// 위치 열
+		const tdLocation = document.createElement('td');
+		const divLocation = document.createElement('div');
+		divLocation.classList.add('select_wrap', 'loca');
+		const selectLocation = document.createElement('select');
+		selectLocation.name = 'location';
+		selectLocation.classList.add('select');
+		selectLocation.title = '보관위치';
+		const optionLoc1 = document.createElement('option');
+		optionLoc1.textContent = '냉장칸';
+		optionLoc1.selected = true;
+		const optionLoc2 = document.createElement('option');
+		optionLoc2.textContent = '야채칸';
+		const optionLoc3 = document.createElement('option');
+		optionLoc3.textContent = '날개칸';
+		selectLocation.appendChild(optionLoc1);
+		selectLocation.appendChild(optionLoc2);
+		selectLocation.appendChild(optionLoc3);
+		divLocation.appendChild(selectLocation);
+		tdLocation.appendChild(divLocation);
+		newRow.appendChild(tdLocation);
+
+		// 삭제 버튼 열
+		const tdDelete = document.createElement('td');
+		const divDelete = document.createElement('div');
+		divDelete.classList.add('row_del');
+		const deleteLink = document.createElement('a');
+		deleteLink.href = '#;';
+		const deleteImg = document.createElement('img');
+		deleteImg.src = './images/sub/delete.png';
+		deleteImg.alt = '행 삭제 버튼';
+		deleteLink.appendChild(deleteImg);
+		divDelete.appendChild(deleteLink);
+		tdDelete.appendChild(divDelete);
+		newRow.appendChild(tdDelete);
+
+		// 테이블에 새로운 행 추가
+		tbody.appendChild(newRow);
+
+		// 새로 추가된 행에 삭제 이벤트 리스너 추가
+		divDelete.addEventListener('click', function () {
+			newRow.remove(); // 현재 행 삭제
+			updateRowCnt(); // 행 번호 업데이트
 		});
 
-		$('.add_list tbody').append(rowAdd); // 새로운 행 추가
+		// 새로 추가된 행에 셀렉트 기능 추가
+		$('.select').select_box({ allowMultiple: false });
+
+
+		// 새로 추가된 행에 수량입력 제어기능 추가
+		$('td.unit select').on('change', function () {
+			const selectedValue = $(this).val();
+			const unitInput = $(this).closest('td.unit').find('input');
+
+			if (selectedValue === 'ml') {
+				unitInput.prop('disabled', false);
+			} else {
+				unitInput.prop('disabled', true);
+			}
+		});
 
 	});
 
-	// 행 삭제 후 행 번호 업데이트
+	// 기본 행 삭제
+	document.querySelectorAll('.row_del').forEach(function (button) {
+		button.addEventListener('click', function () {
+			const row = button.closest('tr');
+			if (row) {
+				row.remove();
+				updateRowCnt();
+			}
+		});
+	});
+
+	// 품목 행 넘버 업데이트
 	function updateRowCnt() {
 		var rowCntNew = 1;
 		$('.add_list tbody tr').each(function (index) {
@@ -165,10 +297,7 @@ $(document).ready(function () {
 		});
 	}
 
-
-	/*Document Ready End----------------------------------------------------*/
-})
-
+});
 
 
 

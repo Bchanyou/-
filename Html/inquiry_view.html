@@ -27,11 +27,8 @@
 
     <title>냉장고를부탁해</title>
 
-    <!--Favicon-->
-    <link rel="shortcut icon" href="images/common/favicon.png" type="image/x-icon">
-    <link rel="icon" href="images/common/favicon.png" type="image/x-icon">
-
     <!--Add Css-->
+    <link rel="stylesheet" href="css/swiper.min.css" media="all" />
 
     <!--Basic Css-->
     <link rel="stylesheet" href="css/style.css" media="all" />
@@ -41,15 +38,11 @@
 
     <!--Add Js-->
     <script src="https://kit.fontawesome.com/b9310abc97.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/swiper.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/slider.js" charset="utf-8"></script>
 
     <!--Basic Js-->
     <script type="text/javascript" src="js/common.js" charset="utf-8"></script>
-
-    <!-- <link rel="stylesheet" href="css/jquery-ui.min.css">
-    <script type="text/javascript" src="js/jquery-ui.min.js" charset="utf-8"></script> -->
-    <script>
-
-    </script>
 
 </head>
 
@@ -129,47 +122,49 @@
 
                         <!-- 문의 내용 작성 -->
                         <section class="sub_cont">
-                            <form action="" method="post">
-                                <div class="bdr_wrap">
-                                    <table class="tb_write" id="cs_inquiry">
-                                        <caption>1:1문의 작성</caption>
-                                        <colgroup>
-                                            <col width="15%">
-                                        </colgroup>
-                                        <tbody>
-                                            <tr>
-                                                <th><span>제목</span></th>
-                                                <td><input type="text" placeholder="제목을 입력해주세요"></td>
-                                            </tr>
-                                            <tr>
-                                                <th><span>내용</span></th>
-                                                <td>
-                                                    <textarea name="" id="inquiry_write" maxlength="3000" placeholder="내용을 입력해주세요 (3,000자 미만)"></textarea>
-                                                    <div class="inquiry_imgs my30">
-                                                        <ul class="imgBlock">
-                                                            <!-- <li><img src="./images/sub/circle_info.png" alt="문의 이미지"></li> -->
-                                                        </ul>
-                                                        <div class="file_btn">
-                                                            <input type="file" id="file_btn" name = "photo" hidden>
-                                                            <label for="file_btn"><img src="./images/sub/camera.png" alt="문의 이미지 업로드"></label>
-                                                        </div>
-                                                    </div>
-                                                    <p class="ico_info">5MB 이하의 이미지만 업로드 가능합니다.</p>
-                                                    <p class="ico_info">상품과 무관한 내용이거나 음란 및 불법적인 내용은 삭제될 수 있습니다.</p>
-                                                    <p class="ico_info">사진은 최대 8장까지 등록가능합니다.</p>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                            <div class="bdr_wrap" id="inquiry_view">
+                                <div class="view_title pa40">
+                                    <h4>문의제목영역</h4>
+                                    <span>작성일</span><span class="date">작성일영역</span>
                                 </div>
-                                <div class="btn_wrap my30">
-                                    <div class="lb"></div>
-                                    <div class="rb">
-                                        <a href="#;"><button class="btn_bg" type="button">취소</button></a>
-                                        <button class="btn_grn" type="submit">등록</button>
+                                <div class="inq_cont_wrap pa40">
+                                    <div class="view_cont my20">
+                                        <p>문의내용영역</p>
+                                    </div>
+
+                                    <!-- 이미지 업로드 시 보이게 -->
+                                    <ul class="view_imgs my20" style="display: none;">
+                                        <li><img src="" alt="문의 이미지"></li>
+                                        <li><img src="" alt="문의 이미지"></li>
+                                        <li><img src="" alt="문의 이미지"></li>
+                                        <li><img src="" alt="문의 이미지"></li>
+                                        <li><img src="" alt="문의 이미지"></li>
+                                        <li><img src="" alt="문의 이미지"></li>
+                                        <li><img src="" alt="문의 이미지"></li>
+                                        <li><img src="" alt="문의 이미지"></li>
+                                    </ul>
+                                </div>
+                                <div class="view_answer pa40">
+                                    <div class="top">
+                                        <i class="fa-regular fa-comment-dots fa-flip-horizontal fa-2xl"
+                                            style="color: #2ec758;"></i>
+                                        <strong>답변내용</strong>
+                                    </div>
+                                    <div class="bott">
+                                        <p class="unanswered">접수된 내용은 빠른시간내에 순차적으로 답변을 드리도록하겠습니다.<br>고객센터 답변가능 시간 : 평일
+                                            09:00 ~ 18:00</p>
+                                        <div class="answer">
+                                            <!--답변내용들어갈곳-->
+                                        </div>
                                     </div>
                                 </div>
-                            </form>
+                            </div>
+                            <div class="btn_wrap my30">
+                                <div class="lb"></div>
+                                <div class="rb">
+                                    <a href="#;" class="btn grn">목록으로</a>
+                                </div>
+                            </div>
                         </section>
 
                     </section>

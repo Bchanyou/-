@@ -121,6 +121,7 @@
  button {background:none; margin:0; padding:0; border:0 none; cursor:pointer;}
  img {max-width: 100%; border:none; -ms-filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='crop')"; filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled='true',sizingMethod='crop');}
  .imgBlock img {display: block;width: 100%;}
+ p {word-break: keep-all;}
  
  
  /* Number Type Arrow Hide */
@@ -187,21 +188,9 @@
 
 /* Login Check*/
 .chk_box .login_chk {display:none;}
-.login_chk + label {position: relative;display: inline-block;font-size:16px; color:#888;border:none;width:auto;height:auto;border-radius: 0;padding:3px 3px 3px 30px;background:url(../images/login/check.png) no-repeat 0;background-size:20px;}
-.login_chk:checked + label {color:#2EC758;background-image:url(../images/login/check_on.png);font-weight: 600;}
+.login_chk + label {position: relative;display: inline-block;font-size:16px; color:#888;border:none;width:auto;height:auto;border-radius: 0;padding:5px 3px 3px 30px;background:url(../images/utilPage/check.png) no-repeat 0;background-size:20px;}
+.login_chk:checked + label {color:#2EC758;background-image:url(../images/utilPage/check_on.png);font-weight: 600;}
 
-
-/*-----------------------------------------------------------------------------
- *  Radio Button
- *----------------------------------------------------------------------------*/
-
-/* Basic */
-.rdo_btn {display: inline-block;vertical-align: middle;margin: 2px 10px 2px 0;}
-.rdo_btn .rdo {display:none;}
-.rdo_btn .rdo + label {position: relative;display: inline-block;vertical-align: middle;font-size:14px;line-height:1; color:#444;}
-.rdo_btn .rdo + label:before {content:'';display:inline-block;vertical-align: middle;width:20px;height:20px;border-radius: 50%;border:1px solid #ccc;margin-right: 5px;}
-.rdo_btn .rdo:checked + label {color:#000;}
-.rdo_btn .rdo:checked + label:before {background:#35c5f0 url("../images/icon/radio_on.png") center center;background-size: 20px auto; border-color:#35c5f0;}
 
 
 /*-----------------------------------------------------------------------------
@@ -227,12 +216,6 @@ input[type=text]:focus,
 input[type=number]:focus,
 input[type=password]:focus {border-color:#2EC758;}
 input[disabled] {background:#eee;}
-/* input[readonly] {background:#fcfcfc;}
-input[readonly]:focus {border-color:#ccc;} */
-
-/* Size */
-input.inp_150 {max-width: 150px}
-input.inp_200 {max-width: 200px}
 
 
 /********************************************************
@@ -287,12 +270,12 @@ input.inp_200 {max-width: 200px}
  
  ********************************************************/
 
-.autoH {zoom: 1;}
+/* .autoH {zoom: 1;}
 .autoH:after {display:block;clear:both;content:' '}
 .clearFix {clear:both;}
 .hidden {visibility:hidden;position:absolute;top:0;left:0;width:0;height:0;font-size:0;line-height:0;}
 .accessibilityWrap dd a {display:block;position:absolute;top:-10000px;left:0;z-index:10000;width:100%;background:#333;color:#fff;font-size:16px;text-align:center;padding:20px 0;}
-.accessibilityWrap dd a:focus {top:0;}
+.accessibilityWrap dd a:focus {top:0;} */
 
 
 /********************************************************
@@ -302,7 +285,7 @@ input.inp_200 {max-width: 200px}
  ********************************************************/
 
 /* Basic */
-html::-webkit-scrollbar {width:5px;height: 5px;}
+/* html::-webkit-scrollbar {width:5px;height: 5px;}
 html::-webkit-scrollbar-track {background:none;}
 html::-webkit-scrollbar-thumb {background-color: #444;}
 html {scrollbar-color: #444 #e4e4e4;}
@@ -310,7 +293,7 @@ html {scrollbar-color: #444 #e4e4e4;}
 body ::-webkit-scrollbar { width: 5px; height: 5px; background: none; }
 body ::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment {height: 5px; display: none; }
 body ::-webkit-scrollbar-track {background: none;  -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px;}
-body ::-webkit-scrollbar-thumb { height: 5px; width: 5px;  -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;background-color: #444;}
+body ::-webkit-scrollbar-thumb { height: 5px; width: 5px;  -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px;background-color: #444;} */
 
 
 /********************************************************
