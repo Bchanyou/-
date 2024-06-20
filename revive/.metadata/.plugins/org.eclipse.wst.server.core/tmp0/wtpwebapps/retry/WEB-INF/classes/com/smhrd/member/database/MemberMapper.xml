@@ -11,13 +11,18 @@
 	
 	<!-- 회원가입 -->
 	<insert id="memberInsert" parameterType="com.smhrd.member.model.MemberDTO">
-		insert into members (mem_id, mem_pw, mem_name, mem_phone, mem_email, joined_at, mem_type)
-		values(#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_phone}, #{mem_email}, #{joined_at}, #{mem_type})
+		insert into members (mem_id, mem_pw, mem_name, mem_phone, mem_email, joined_at)
+		values(#{mem_id}, #{mem_pw}, #{mem_name}, #{mem_phone}, #{mem_email}, #{joined_at})
 	</insert>
 	
-	<!-- 멤버 아이디 중복 체크 -->
+	<!-- 회원가입 아이디 중복 체크 -->
     <select id="checkMemberId" resultType="int" parameterType="String">
         SELECT COUNT(*) FROM members WHERE mem_id=#{mem_id}
+    </select>
+    
+    <!-- 회원가입 이메일 중복 체크 -->
+    <select id="checkMemberEmail" resultType="int" parameterType="String">
+        SELECT COUNT(*) FROM members WHERE mem_email=#{real_email}
     </select>
 	
 	<!-- 로그인 -->

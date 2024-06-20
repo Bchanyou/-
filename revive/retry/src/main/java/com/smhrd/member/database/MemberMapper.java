@@ -8,6 +8,8 @@ import org.apache.ibatis.annotations.Param;
 public interface MemberMapper {
 
     int checkMemberId(@Param("mem_id") String mem_id);
+    
+    int checkMemberEmail(@Param("real_email") String real_email);
 
     MemberDTO selectMember(@Param("mem_id") String mem_id, @Param("mem_pw") String mem_pw);
 
@@ -16,6 +18,7 @@ public interface MemberMapper {
     int deletMember(@Param("mem_email") String mem_email);
 
     int updateMember(MemberDTO member);
+
 
     // 다른 메서드들...
 }

@@ -8,27 +8,22 @@ import javax.servlet.http.HttpServletResponse;
 import com.smhrd.member.model.MemberDAO;
 
 public class MemberEmailCheckCon extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
-    protected void service(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String mem_email = request.getParameter("mail");
+        String email_name = request.getParameter("emailname");
+        String real_email = mem_email + "@" + email_name;
+        System.out.println(real_email);
+
         MemberDAO dao = new MemberDAO();
-        int count = -1;
+        int count = dao.check2(real_email);
 
-        try {
-            count = dao.check(mem_email);
-        } catch (Exception e) {
-            // 예외 상황 로그 기록 (로깅 프레임워크 사용 권장)
-            e.printStackTrace();
+        if (count == -1) {
             response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            return;
-        }
-
-        if (count > 0) {
-            response.getWriter().write("available");
+        } else if (count > 0) {
+            response.getWriter().write("unavailable");
         } else {
-        	response.getWriter().write("unavailable");
+            response.getWriter().write("available");
         }
     }
 }

@@ -52,6 +52,17 @@ public class MemberDAO {
 		}
 	}
 
+	// 중복 체크
+	public int check2(String real_email) {
+		try (SqlSession sqlSession = factory.openSession()) {
+			MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+			return mapper.checkMemberEmail(real_email);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return -1;
+		}
+	}
+
 	// 로그인 기능
 	public MemberDTO login(MemberDTO member) {
 		SqlSession sqlSession = factory.openSession(true);// true 반드시 넣기
@@ -159,9 +170,9 @@ public class MemberDAO {
 		int cnt = 0;
 		try {
 			cnt = sqlSession.delete("com.smhrd.member.database.MemberMapper.deletMember", deleteId);
-			if(cnt>0) {
+			if (cnt > 0) {
 				sqlSession.commit();
-			}else {
+			} else {
 				sqlSession.rollback();
 			}
 		} catch (Exception e) {
@@ -173,14 +184,8 @@ public class MemberDAO {
 
 		return cnt;
 
-	}//회원 탈퇴 끝
-	
-	
-	
-	
-	
-	
-	
+	}// 회원 탈퇴 끝
+
 	public MemberDTO selectMember(MemberDTO memberDTO) {
 		return null;
 	}
