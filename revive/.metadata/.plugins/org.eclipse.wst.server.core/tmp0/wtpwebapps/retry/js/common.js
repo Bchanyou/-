@@ -104,7 +104,18 @@ $(function() {
 		// Display the formatted date
 		// document.getElementsByClassName("date_format")[0].value = formattedDate;
 	}
+	
+	// 선택 단위가 ml일 경우 입력 비활성화
+	$('td.unit select').on('change', function() {
+		const selectedValue = $(this).val();
+		const unitInput = $(this).closest('td.unit').find('input');
 
+		if (selectedValue === 'ml') {
+			unitInput.prop('disabled', false);
+		} else {
+			unitInput.prop('disabled', true);
+		}
+	});
 
 });
 
@@ -201,6 +212,7 @@ function submitFormEmail(action) {
 			} else {
 				alert('이미 사용 중인 이메일입니다.');
 				document.getElementsByName('mail')[0].value = ''; // 입력 필드 지우기
+				document.getElementById('emailname').selectedIndex = 0; // 이메일 도메인 선택 초기화
 				document.getElementsByName('mail')[0].focus(); // 입력 필드 포커스
 			}
 		},

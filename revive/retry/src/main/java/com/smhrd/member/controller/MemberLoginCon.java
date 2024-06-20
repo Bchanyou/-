@@ -2,6 +2,7 @@ package com.smhrd.member.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -43,6 +44,9 @@ public class MemberLoginCon extends HttpServlet {
             	HttpSession session = request.getSession(true); // 세션이 없으면 새로 생성
             	session.setAttribute("loginMember", member);
                 session.invalidate();
+                Cookie idCookie = new Cookie("savedId", mem_id);
+                idCookie.setMaxAge(60 * 60 * 24 * 30); // 쿠키 유효기간 설정 (30일)
+                response.addCookie(idCookie);
                 System.out.println("아이디저장안됨");
             }
 
@@ -62,7 +66,7 @@ public class MemberLoginCon extends HttpServlet {
                 System.out.println("자동로그인안됨");
             }
 
-            response.sendRedirect("my_fridge.html");
+            response.sendRedirect("my_fridge.jsp");
             System.out.println("로그인 성공");
             System.out.println("Session ID: " + member.getMem_id());
             System.out.println("Session Password: " + member.getMem_pw());

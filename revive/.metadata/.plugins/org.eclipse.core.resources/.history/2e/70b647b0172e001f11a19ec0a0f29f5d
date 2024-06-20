@@ -1,0 +1,44 @@
+package com.smhrd.ingredient.model;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+
+import com.smhrd.member.database.MemberMapper;
+import com.smhrd.member.database.SqlSessionManager;
+
+public class IngredientDAO {
+
+	// 0. Factory 가지고 오기
+	// DB연결, 쿼리문 수행, DB종료를 작업할 수 있는 객체 생성
+	SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
+
+	// 회원 가입 기능
+	public int join(IngredientDTO member) {
+		SqlSession sqlSession = factory.openSession(true);// true 반드시 넣기
+
+		int cnt = 0;
+		try {
+			cnt = sqlSession.insert("com.smhrd.ingredient.database.MemberMapper.memberInsert", member);// mapper안에 작성한 매개변수
+																									// 찾기
+
+			if (cnt > 0) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			System.out.println("회원가입 실패!");
+			e.printStackTrace();
+		} finally {
+			// 3. session 자원 반납
+			sqlSession.close();
+		}
+
+		return cnt;
+	}// 회원가입 끝
+
+}

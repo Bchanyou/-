@@ -1,0 +1,31 @@
+package com.smhrd.ingredient.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.smhrd.member.model.MemberDTO;
+
+public class IngredientsAdd extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		System.out.println("join controller!");
+		// 1. 한글 인코딩
+		request.setCharacterEncoding("UTF-8");
+		
+		// 2. 데이터 가지고 오기
+		String ingre_name=request.getParameter("name");
+		String ingre_unit=request.getParameter("unit");
+		String ingre_stock=request.getParameter("stock");
+		String purchased_at = request.getParameter("date_buy");
+		String expired_at = request.getParameter("date_exp");
+		String ingre_loc = request.getParameter("location");
+		
+		MemberDTO member = new MemberDTO(null, ingre_name, mem_id, purchased_at, expired_at, ingre_unit, ingre_stock, ingre_loc);
+	}
+
+}

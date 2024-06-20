@@ -129,7 +129,7 @@
 				</div>
 
 				<!-- 테이블 -->
-				<form class="tb_wrap" method="post" action="MemberJoinCon" name="">
+				<form class="tb_wrap" method="post" action="MemberJoinCon" id="join" name="">
 					<div class="bdr_wrap row">
 						<table>
 							<caption>회원가입</caption>
@@ -166,10 +166,10 @@
 								</tr>
 								<tr>
 									<th>이메일</th>
-									<td class="disf"><input type="text" name="mail"
+									<td class="disf"><input type="text" id="email" name="mail"
 										placeholder="이메일"> <span>@</span>
 										<div class="select_wrap">
-											<select name="slt_mail" class="select">
+											<select name="slt_mail" id="emailname" class="select">
 												<option selected>선택하세요</option>
 												<option>naver.com</option>
 												<option>gmail.com</option>
@@ -180,7 +180,7 @@
 							</tbody>
 						</table>
 						<div class="btn_wrap center my30">
-							<a href="#"><button type="submit" onclick="submitFormEmail('MemberEmailCheckCon')" class="btn_grn w200">회원가입</button></a>
+							<button onclick="submitFormEmail('MemberEmailCheckCon')" type="submit"  class="btn_grn w200">회원가입</button>
 						</div>
 					</div>
 				</form>

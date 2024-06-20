@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="UTF-8"%>
 <!doctype html>
 <html lang="ko">
 
@@ -95,9 +97,9 @@
                 <div class="hdr_util">
                     <ul>
                         <li style="display: none;"><a href="#">마이페이지</a></li>
-                        <li class="btn_logout"><a href="MemberLogoutCon">로그아웃</a></li>
-                        <li><a href="MemberLoginCon">로그인</a></li>
-                        <li><a href="MemberJoinCon">회원가입</a></li>
+                        <li style="display: none;"><a href="#">로그아웃</a></li>
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
                     </ul>
                 </div>
 
@@ -168,7 +170,7 @@
 
                                 <!-- 보관중인 품목이 없을 경우 보여지는 박스/ 
                                         아래 전체,선택삭제 버튼도 마찬가지 -->
-                                <div class="fridge_null">
+                                <div class="info_box null_box">
                                     <p class="ico_info">보유중인 품목이 없습니다</p>
                                 </div>
 
@@ -203,7 +205,7 @@
                                             <col>
                                             <col width="18%">
                                             <col width="10%">
-                                            <col width="8%">
+                                            <col>
                                             <col>
                                             <col>
                                             <col width="50px">
@@ -223,28 +225,28 @@
                                         <tbody>
                                             <tr>
                                                 <td>1</td>
-                                                <td><input type="text" placeholder="품목명 입력"></td>
+                                                <td><input type="text" name="name" placeholder="품목명 입력"></td>
                                                 <td class="unit">
-                                                    <input type="text">
                                                     <div class="select_wrap">
                                                         <select name="unit" class="select" title="품목 단위">
                                                             <option selected>개</option>
                                                             <option>ml</option>
                                                         </select>
                                                     </div>
+                                                    <input type="text" class="unit_input" name="stock" disabled>
                                                 </td>
                                                 <td class="qtt_num">
                                                     <input type="number" value="1">
                                                 </td>
                                                 <td class="date_picker">
-                                                    <input type="date" id="date_buy" class="date_format" onchange="formatDate()">
+                                                    <input type="date" id="date_buy" name="date_buy" class="date_format" onchange="formatDate()">
                                                 </td>
                                                 <td class="date_picker">
-                                                    <input type="date" id="date_exp" class="date_format" onchange="formatDate()">
+                                                    <input type="date" id="date_exp" name="date_exp" class="date_format" onchange="formatDate()">
                                                 </td>
                                                 <td>
                                                     <div class="select_wrap loca">
-                                                        <select name="location" class="select" title="보관위치">
+                                                        <select name="location" name="location" class="select" title="보관위치">
                                                             <option selected>냉장칸</option>
                                                             <option>야채칸</option>
                                                             <option>날개칸</option>

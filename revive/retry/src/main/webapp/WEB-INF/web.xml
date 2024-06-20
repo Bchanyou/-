@@ -66,6 +66,24 @@
 		<description></description>
 		<servlet-class>com.smhrd.member.controller.MemberEditCon</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>MemberIdFind</servlet-name>
+		<display-name>MemberIdFind</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.member.controller.MemberIdFind</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MemberPwFind</servlet-name>
+		<display-name>MemberPwFind</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.member.controller.MemberPwFind</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>IngredientAddCon</servlet-name>
+		<display-name>IngredientAddCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.ingredient.controller.IngredientAddCon</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>MemberJoinCon</servlet-name>
@@ -102,5 +120,17 @@
 	<servlet-mapping>
 		<servlet-name>MemberEditCon</servlet-name>
 		<url-pattern>/MemberEditCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberIdFind</servlet-name>
+		<url-pattern>/MemberIdFind</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberPwFind</servlet-name>
+		<url-pattern>/MemberPwFind</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>IngredientAddCon</servlet-name>
+		<url-pattern>/IngredientAddCon</url-pattern>
 	</servlet-mapping>
 </web-app>
