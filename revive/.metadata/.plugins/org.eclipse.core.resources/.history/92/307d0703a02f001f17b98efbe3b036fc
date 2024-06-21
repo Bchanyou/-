@@ -5,7 +5,7 @@
 <%@ page import="com.smhrd.ingredient.controller.IngredientSearchCon"%>
 <%@ page import="java.util.List"%>
 <%
-List<IngredientDTO> ingredientList = (List<IngredientDTO>) request.getAttribute("ingredientList");
+    List<IngredientDTO> ingredientList = (List<IngredientDTO>) request.getAttribute("ingredientList");
 %>
 <!doctype html>
 <html lang="ko">
@@ -162,14 +162,15 @@ List<IngredientDTO> ingredientList = (List<IngredientDTO>) request.getAttribute(
 
 						<!-- 품목리스트 -->
 						<form class="tb_wrap" action="" name="">
-
-
+							
+							
 							<!-- 냉장칸 -->
 							<div class="mid_tit my20 loca">
 								<h4>
 									<span>01</span><strong>냉장칸</strong>
 								</h4>
 							</div>
+
 							<div class="bdr_wrap">
 								<table class="fridge_list" id="ingredientTable1">
 									<caption>냉장칸 보유 품목</caption>
@@ -203,8 +204,7 @@ List<IngredientDTO> ingredientList = (List<IngredientDTO>) request.getAttribute(
 										if (ingredientList != null) {
 											for (IngredientDTO ingredient : ingredientList) {
 												String location = ingredient.getIngre_loc();
-												if (location != null && location.equals("냉장칸")) {
-										%>
+										        if (location != null && location.equals("냉장칸")) {%>
 										<tr>
 											<td></td>
 											<td><%=ingredient.getIngre_name()%></td>
@@ -212,8 +212,130 @@ List<IngredientDTO> ingredientList = (List<IngredientDTO>) request.getAttribute(
 											<td><%=ingredient.getPurchased_at()%></td>
 											<td><%=ingredient.getExpired_at()%></td>
 										</tr>
+										<%}
+										}
+										} else {
+										%>
+										<tr>
+											<td colspan="4">보유중인 품목이 없습니다.</td>
+										</tr>
 										<%
 										}
+										%>
+									</tbody>
+								</table>
+								
+								<div class="mid_tit my20 loca">
+								<h4>
+									<span>01</span><strong>냉장칸</strong>
+								</h4>
+							</div>
+							
+							
+							<!-- 야채칸 -->
+							<div class="bdr_wrap">
+								<table class="fridge_list" id="ingredientTable2">
+									<caption>야채칸 보유 품목</caption>
+									<colgroup>
+										<col width="50px">
+										<col>
+										<col>
+										<col width="15%">
+										<col width="15%">
+										<col width="20%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>
+												<div class="chk_box">
+													<input type="checkbox" id="check_all" class="chk">
+													<label for="check_all"></label>
+												</div>
+											</th>
+											<th>품목명</th>
+											<th>수량</th>
+											<th>구매날짜</th>
+											<th>유통기한</th>
+											<th>관리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- Java 코드로 ingredientList를 반복하며 데이터를 출력 -->
+										<%
+										//request 영역에 저장된 게시글 정보 가져오기
+										if (ingredientList != null) {
+											for (IngredientDTO ingredient : ingredientList) {
+												if(ingredient.getIngre_loc().equals("야채칸")){%>
+										<tr>
+											<td></td>
+											<td><%=ingredient.getIngre_name()%></td>
+											<td><%=ingredient.getIngre_stock()%></td>
+											<td><%=ingredient.getPurchased_at()%></td>
+											<td><%=ingredient.getExpired_at()%></td>
+										</tr>
+										<%}
+										}
+										} else {
+										%>
+										<tr>
+											<td colspan="4">보유중인 품목이 없습니다.</td>
+										</tr>
+										<%
+										}
+										%>
+									</tbody>
+								</table>
+								
+								
+								<div class="mid_tit my20 loca">
+								<h4>
+									<span>01</span><strong>냉장칸</strong>
+								</h4>
+							</div>
+							
+							
+							<!-- 날개칸 -->
+							<div class="bdr_wrap">
+								<table class="fridge_list" id="ingredientTable3">
+									<caption>날개칸 보유 품목</caption>
+									<colgroup>
+										<col width="50px">
+										<col>
+										<col>
+										<col width="15%">
+										<col width="15%">
+										<col width="20%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>
+												<div class="chk_box">
+													<input type="checkbox" id="check_all" class="chk">
+													<label for="check_all"></label>
+												</div>
+											</th>
+											<th>품목명</th>
+											<th>수량</th>
+											<th>구매날짜</th>
+											<th>유통기한</th>
+											<th>관리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- Java 코드로 ingredientList를 반복하며 데이터를 출력 -->
+										<%
+										//request 영역에 저장된 게시글 정보 가져오기
+										if (ingredientList != null) {
+											for (IngredientDTO ingredient : ingredientList) {
+												if(ingredient.getIngre_loc().equals("날개칸")){%>
+										<tr>
+											<td></td>
+											<td><%=ingredient.getIngre_name()%></td>
+											<td><%=ingredient.getIngre_stock()%></td>
+											<td><%=ingredient.getPurchased_at()%></td>
+											<td><%=ingredient.getExpired_at()%></td>
+										</tr>
+										<%}
 										}
 										} else {
 										%>
@@ -226,146 +348,22 @@ List<IngredientDTO> ingredientList = (List<IngredientDTO>) request.getAttribute(
 									</tbody>
 								</table>
 
-								<!-- 야채칸 -->
-								<div class="mid_tit my20 loca">
-									<h4>
-										<span>01</span><strong>야채칸</strong>
-									</h4>
-								</div>
-								<div class="bdr_wrap">
-									<table class="fridge_list" id="ingredientTable2">
-										<caption>야채칸 보유 품목</caption>
-										<colgroup>
-											<col width="50px">
-											<col>
-											<col>
-											<col width="15%">
-											<col width="15%">
-											<col width="20%">
-										</colgroup>
-										<thead>
-											<tr>
-												<th>
-													<div class="chk_box">
-														<input type="checkbox" id="check_all" class="chk">
-														<label for="check_all"></label>
-													</div>
-												</th>
-												<th>품목명</th>
-												<th>수량</th>
-												<th>구매날짜</th>
-												<th>유통기한</th>
-												<th>관리</th>
-											</tr>
-										</thead>
-										<tbody>
-											<!-- Java 코드로 ingredientList를 반복하며 데이터를 출력 -->
-											<%
-											//request 영역에 저장된 게시글 정보 가져오기
-											if (ingredientList != null) {
-												for (IngredientDTO ingredient : ingredientList) {
-													String location = ingredient.getIngre_loc();
-													if (location != null && location.equals("야채칸")) {
-											%>
-											<tr>
-												<td></td>
-												<td><%=ingredient.getIngre_name()%></td>
-												<td><%=ingredient.getIngre_stock()%></td>
-												<td><%=ingredient.getPurchased_at()%></td>
-												<td><%=ingredient.getExpired_at()%></td>
-											</tr>
-											<%
-											}
-											}
-											} else {
-											%>
-											<tr>
-												<td colspan="4">보유중인 품목이 없습니다.</td>
-											</tr>
-											<%
-											}
-											%>
-										</tbody>
-									</table>
-
-
-									<!-- 날개칸 -->
-									<div class="mid_tit my20 loca">
-										<h4>
-											<span>01</span><strong>날개칸</strong>
-										</h4>
-									</div>
-									<div class="bdr_wrap">
-										<table class="fridge_list" id="ingredientTable3">
-											<caption>날개칸 보유 품목</caption>
-											<colgroup>
-												<col width="50px">
-												<col>
-												<col>
-												<col width="15%">
-												<col width="15%">
-												<col width="20%">
-											</colgroup>
-											<thead>
-												<tr>
-													<th>
-														<div class="chk_box">
-															<input type="checkbox" id="check_all" class="chk">
-															<label for="check_all"></label>
-														</div>
-													</th>
-													<th>품목명</th>
-													<th>수량</th>
-													<th>구매날짜</th>
-													<th>유통기한</th>
-													<th>관리</th>
-												</tr>
-											</thead>
-											<tbody>
-												<!-- Java 코드로 ingredientList를 반복하며 데이터를 출력 -->
-												<%
-												//request 영역에 저장된 게시글 정보 가져오기
-												if (ingredientList != null) {
-													for (IngredientDTO ingredient : ingredientList) {
-														String location = ingredient.getIngre_loc();
-														if (location != null && location.equals("날개칸")) {
-												%>
-												<tr>
-													<td></td>
-													<td><%=ingredient.getIngre_name()%></td>
-													<td><%=ingredient.getIngre_stock()%></td>
-													<td><%=ingredient.getPurchased_at()%></td>
-													<td><%=ingredient.getExpired_at()%></td>
-												</tr>
-												<%
-												}
-												}
-												} else {
-												%>
-												<tr>
-													<td colspan="4">보유중인 품목이 없습니다.</td>
-												</tr>
-												<%
-												}
-												%>
-											</tbody>
-										</table>
-
-										<!-- 보관중인 품목이 없을 경우 보여지는 박스/ 
+								<!-- 보관중인 품목이 없을 경우 보여지는 박스/ 
                                         아래 전체,선택삭제 버튼도 마찬가지 -->
-										<div class="info_box null_box">
-											<p class="ico_info">보유중인 품목이 없습니다</p>
-										</div>
+								<div class="info_box null_box">
+									<p class="ico_info">보유중인 품목이 없습니다</p>
+								</div>
 
-									</div>
+							</div>
 
-									<div class="btn_wrap my30">
-										<div class="lb"></div>
-										<div class="rb">
-											<button class="btn_bg check_del" type="button">선택삭제</button>
-											<button class="btn_grn btn_modal" type="button">품목추가</button>
-										</div>
-									</div>
+							<div class="btn_wrap my30">
+								<div class="lb"></div>
+								<div class="rb">
+									<button class="btn_bg check_del" type="button">선택삭제</button>
+									<button class="btn_grn btn_modal" type="button">품목추가</button>
+								</div>
+							</div>
+
 						</form>
 
 						<!-- 품목추가 팝업창 -->

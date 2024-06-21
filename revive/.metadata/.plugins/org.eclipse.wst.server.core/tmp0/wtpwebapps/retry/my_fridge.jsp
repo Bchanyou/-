@@ -6,13 +6,6 @@
 <%@ page import="java.util.List"%>
 <%
     List<IngredientDTO> ingredientList = (List<IngredientDTO>) request.getAttribute("ingredientList");
-    if (ingredientList != null) {
-        for (IngredientDTO ingredient : ingredientList) {
-            out.println(ingredient.getMem_id() + "<br>");
-        }
-    } else {
-        out.println("No ingredients found.");
-    }
 %>
 <!doctype html>
 <html lang="ko">
