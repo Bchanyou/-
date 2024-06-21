@@ -48,6 +48,7 @@ public class MemberLoginCon extends HttpServlet {
                 idCookie.setMaxAge(60 * 60 * 24 * 30); // 쿠키 유효기간 설정 (30일)
                 response.addCookie(idCookie);
                 System.out.println("아이디저장안됨");
+                System.out.println("Cookie ID: " + idCookie.getValue());
             }
 
             // 자동 로그인 처리

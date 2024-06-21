@@ -2,6 +2,7 @@ package com.smhrd.member.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,39 +24,63 @@ public class MemberEditCon extends HttpServlet {
 		// 2. 데이터 가지고 오기
 		//로그인정보는 어디에서 가져와야 하는지: session
 		HttpSession session = request.getSession();// 세션 생성
+		
+		// 세션에서 회원 정보 가져오기
 		MemberDTO member=(MemberDTO)session.getAttribute("loginMember");
 		
-		String id=member.getMem_id();
-		String pw=member.getMem_pw();
+		if (member == null) {//세션에 로그인 정보가 없으면
+			Cookie[] cookies = request.getCookies();//쿠키를 가져와서
+			if (cookies != null) {
+				for (Cookie cookie : cookies) {
+					if (cookie.getName().equals("savedId")) {
+						String savedId = cookie.getValue();
+						System.out.println("Saved Id from cookie: " + savedId);}
+					}
+				}
+			}
+		
+		String saveId=member.getMem_id();//login.jsp 참고해서 id칸 자동으로 채우기 구현
+		System.out.println("Saved Id from session: " + saveId);
 		
 		
-		String mem_id = request.getParameter("id");
-		//login.jsp 참고해서 id칸 자동으로 채우기 구현
-		String mem_pw= request.getParameter("pw");
-		String mem_pw_new = request.getParameter("pw_new");
-		String mem_pw_check = request.getParameter("pw_new_check");
-		String mem_name = request.getParameter("name");
-		String mem_phone = request.getParameter("phone");
-		String mem_email = request.getParameter("email");
 		
-		MemberDTO updateMember = new MemberDTO(null, mem_pw, mem_name, mem_phone, mem_email, null, null );
+	      
+		String currentPassword = request.getParameter("currentPassword");
+        String newPassword = request.getParameter("newPassword");
+        String newPasswordConfirm = request.getParameter("newPasswordConfirm");
+        String newName = request.getParameter("newName");
+        String newPhone = request.getParameter("newPhone");
+        String newEmail = request.getParameter("newEmail");
 
-		// 3. DB기능 호출
-		MemberDAO dao = new MemberDAO();
+        MemberDAO memberDAO = new MemberDAO();
+        boolean passwordMatch = memberDAO.checkPassword(saveId, currentPassword);
+        if (!passwordMatch) {
+            request.setAttribute("error", "현재 비밀번호가 일치하지 않습니다.");
+            request.getRequestDispatcher("edit_profile.jsp").forward(request, response);
+            return;
+        }
 
-		int cnt = dao.update(updateMember);
-		
-		if(pw==mem_pw) {
-			//session에 저장된 회원정보를 업데이트하기
-			session.setAttribute("loginMember", updateMember);
-			
-			System.out.println("정보수정 성공");
-			response.sendRedirect("index.jsp");
-		}else {
-			System.out.println("정보수정 실패");
-			response.sendRedirect("update.jsp");
-		}
+        if (!newPassword.equals(newPasswordConfirm)) {
+            request.setAttribute("error", "신규 비밀번호와 확인 비밀번호가 일치하지 않습니다.");
+            request.getRequestDispatcher("edit_profile.jsp").forward(request, response);
+            return;
+        }
 
-	}
+        MemberDTO updateMember = new MemberDTO();
+        updateMember.setMem_id(saveId);
+        updateMember.setMem_name(newName);
+        updateMember.setMem_phone(newPhone);
+        updateMember.setMem_email(newEmail);
+        if (!newPassword.isEmpty()) {
+            updateMember.setMem_pw(newPassword);
+        }
 
+        int result = memberDAO.updateMember(updateMember);
+        if (result > 0) {
+            response.sendRedirect("profile.jsp");
+        } else {
+            request.setAttribute("error", "회원 정보 수정에 실패했습니다.");
+            request.getRequestDispatcher("edit_profile.jsp").forward(request, response);
+        }
+    }
 }

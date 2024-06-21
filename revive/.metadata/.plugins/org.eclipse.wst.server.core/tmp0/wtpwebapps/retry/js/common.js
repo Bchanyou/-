@@ -72,39 +72,18 @@ $(function() {
 
 
 
+	
+	
+
+});
 
 
+/*-----------------------------------------------------------------------------
+*  품목추가
+*----------------------------------------------------------------------------*/
 
-	// 구매일 설정
-	var today = new Date().toISOString().split('T')[0];
-	var dateInput = document.getElementById('date_buy');
-	dateInput.value = today;
-
-	// yy-mm-dd 포맷
-	function formatDate() {
-
-		var input = document.getElementsByClassName("date_format");
-
-		// Get the selected date (YYYY-MM-DD format)
-		var selectedDate = input[0].value;
-		console.log(selectedDate)
-
-		// Split the date string by "-"
-		var parts = selectedDate.split("-");
-
-		// Extract year, month, and day
-		var year = parts[0].substring(2); // Get last two digits of the year
-		var month = parts[1];
-		var day = parts[2];
-
-		// Format the date as 24-06-17
-		var formattedDate = year + "-" + month + "-" + day;
-		console.log(formattedDate)
-
-		// Display the formatted date
-		// document.getElementsByClassName("date_format")[0].value = formattedDate;
-	}
-
+$(document).ready(function() {
+	
 	// 선택 단위가 ml일 경우 입력 비활성화
 	$('td.unit select').on('change', function() {
 		const selectedValue = $(this).val();
@@ -116,15 +95,6 @@ $(function() {
 			unitInput.prop('disabled', true);
 		}
 	});
-
-});
-
-
-/*-----------------------------------------------------------------------------
-*  품목추가
-*----------------------------------------------------------------------------*/
-
-$(document).ready(function() {
 
 	// 테이블 상태 업데이트 함수
 	function updateFridgeTable() {

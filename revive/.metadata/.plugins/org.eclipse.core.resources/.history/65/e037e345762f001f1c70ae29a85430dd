@@ -1,0 +1,32 @@
+package com.smhrd.ingredient.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.smhrd.ingredient.model.IngredientDAO;
+import com.smhrd.ingredient.model.IngredientDTO;
+
+public class IngredientSearchCon extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		int num = Integer.parseInt(request.getParameter("num"));
+
+		IngredientDAO dao = new IngredientDAO();
+
+		List<IngredientDTO> ingredientList = dao.search();
+		
+		
+		
+		RequestDispatcher dis = request.getRequestDispatcher("boardView.jsp");
+		dis.forward(request, response);
+	}
+
+}

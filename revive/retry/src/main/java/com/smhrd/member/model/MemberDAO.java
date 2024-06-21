@@ -163,6 +163,28 @@ public class MemberDAO {
 		}
 		return cnt;
 	}// 회원정보 수정 끝
+	
+	// 회원정보수정페이지에서 현재 id를 기준으로 현재 pw를 가져오기
+	public int getMemberById(String saveID) {
+		SqlSession sqlSession = factory.openSession(true);
+		int cnt = 0;
+		try {
+			cnt = sqlSession.update("com.smhrd.member.database.MemberMapper.selectMemberPwInfoByID", saveID);
+
+			if (cnt > 0) {
+				System.out.println("완료");
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			System.out.println("실패");
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return cnt;
+	}// 회원정보 수정 끝
 
 	// 회원 탈퇴
 	public int delete(String deleteId) {
@@ -189,5 +211,17 @@ public class MemberDAO {
 	public MemberDTO selectMember(MemberDTO memberDTO) {
 		return null;
 	}
+
+	// 회원 정보 수정
+	public int updateMember(MemberDTO updateMember) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+	// 회원 비밀번호와 맞는지 확인
+	public boolean checkPassword(String saveId, String currentPassword) {
+		return false;
+	}
+
 
 }

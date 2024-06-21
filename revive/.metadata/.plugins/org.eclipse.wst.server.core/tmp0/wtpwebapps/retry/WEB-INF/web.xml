@@ -84,6 +84,12 @@
 		<description></description>
 		<servlet-class>com.smhrd.ingredient.controller.IngredientAddCon</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>IngredientSearchCon</servlet-name>
+		<display-name>IngredientSearchCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.ingredient.controller.IngredientSearchCon</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>MemberJoinCon</servlet-name>
@@ -132,5 +138,9 @@
 	<servlet-mapping>
 		<servlet-name>IngredientAddCon</servlet-name>
 		<url-pattern>/IngredientAddCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>IngredientSearchCon</servlet-name>
+		<url-pattern>/IngredientSearchCon</url-pattern>
 	</servlet-mapping>
 </web-app>

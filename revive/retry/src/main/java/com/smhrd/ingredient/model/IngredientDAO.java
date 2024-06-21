@@ -1,5 +1,7 @@
 package com.smhrd.ingredient.model;
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,6 +41,22 @@ public class IngredientDAO {
 		}
 
 		return cnt;
-	}// 회원가입 끝
+	}// 품목 추가 끝
+	
+	 // 모든 품목 조회
+    public List<IngredientDTO> search(String mem_id) {
+        SqlSession sqlSession = factory.openSession(true); // true 반드시 넣기
+        List<IngredientDTO> list = null;
+
+        try {
+            IngredientMapper mapper = sqlSession.getMapper(IngredientMapper.class);
+            list = mapper.listIngredient(mem_id); // mem_id를 이용해 해당 회원의 품목 조회
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            sqlSession.close();
+        }
+        return list;
+    }// 품목 조회 끝
 
 }

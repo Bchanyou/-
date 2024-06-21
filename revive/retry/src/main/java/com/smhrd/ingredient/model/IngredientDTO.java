@@ -115,17 +115,29 @@ public class IngredientDTO {
 
     // 생성자 추가
     public IngredientDTO(String mem_id, String ingre_name, String purchased_at, String expired_at,
-    		String ingre_unit, String ingre_stock2, String ingre_bundle2, String ingre_loc) {
+    		String ingre_unit, String ingre_stock, String ingre_bundle, String ingre_loc) {
     	super();
     	this.mem_id = mem_id;
     	this.ingre_name = ingre_name;
     	this.purchased_at = purchased_at;
     	this.expired_at = expired_at;
     	this.ingre_unit = ingre_unit;
-    	this.ingre_stock = ingre_stock2;
-    	this.ingre_bundle = ingre_bundle2;
+    	this.ingre_stock = ingre_stock;
+    	this.ingre_bundle = ingre_bundle;
     	this.ingre_loc = ingre_loc;
     }
+    
+    //    public IngredientDTO(String mem_id, String ingre_name, String purchased_at, String expired_at,
+//    		String ingre_unit, String ingre_stock2, String ingre_bundle2, String ingre_loc) {
+//    	this.mem_id = mem_id;
+//    	this.ingre_name = ingre_name;
+//    	this.purchased_at = purchased_at;
+//    	this.expired_at = expired_at;
+//    	this.ingre_unit = ingre_unit;
+//    	this.ingre_stock = ingre_stock2;
+//    	this.ingre_bundle = ingre_bundle2;
+//    	this.ingre_loc = ingre_loc;
+//    }
 
     // 기본 생성자
     public IngredientDTO() {

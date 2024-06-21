@@ -1,0 +1,30 @@
+package com.smhrd.ingredient.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.smhrd.ingredient.model.IngredientDAO;
+import com.smhrd.ingredient.model.IngredientDTO;
+
+public class IngredientSearchCon extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 회원 아이디를 세션에서 가져오거나 쿠키에서 가져오는 코드가 필요할 수 있습니다.
+        String mem_id = ""; // 세션 또는 쿠키에서 회원 아이디를 가져오는 코드 필요
+        
+        IngredientDAO dao = new IngredientDAO();
+        List<IngredientDTO> ingredientList = dao.search(mem_id); // 해당 회원의 모든 품목 조회
+
+        request.setAttribute("ingredientList", ingredientList);
+
+        RequestDispatcher dis = request.getRequestDispatcher("boardView.jsp");
+        dis.forward(request, response);
+    }
+}
