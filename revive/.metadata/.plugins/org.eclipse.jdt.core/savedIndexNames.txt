@@ -7,7 +7,6 @@ INDEX VERSION 1.134+C:\Users\smhrd\Desktop\핵심프로젝트\Take_care_of_the_fridge\
 575459281.index
 3675015720.index
 4038431948.index
-2943182976.index
 3441499049.index
 1865797976.index
 2296857434.index

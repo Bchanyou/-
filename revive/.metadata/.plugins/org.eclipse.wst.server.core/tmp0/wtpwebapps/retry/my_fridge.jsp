@@ -2,7 +2,18 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="com.smhrd.ingredient.model.IngredientDTO"%>
+<%@ page import="com.smhrd.ingredient.controller.IngredientSearchCon"%>
 <%@ page import="java.util.List"%>
+<%
+    List<IngredientDTO> ingredientList = (List<IngredientDTO>) request.getAttribute("ingredientList");
+    if (ingredientList != null) {
+        for (IngredientDTO ingredient : ingredientList) {
+            out.println(ingredient.getMem_id() + "<br>");
+        }
+    } else {
+        out.println("No ingredients found.");
+    }
+%>
 <!doctype html>
 <html lang="ko">
 
@@ -53,6 +64,8 @@
 
 <!--Basic Js-->
 <script type="text/javascript" src="js/common.js" charset="utf-8"></script>
+
+
 
 <!-- <link rel="stylesheet" href="css/jquery-ui.min.css">
     <script type="text/javascript" src="js/jquery-ui.min.js" charset="utf-8"></script> -->
@@ -164,7 +177,7 @@
 							</div>
 
 							<div class="bdr_wrap">
-								<table class="fridge_list">
+								<table class="fridge_list" id="ingredientTable">
 									<caption>냉장칸 보유 품목</caption>
 									<colgroup>
 										<col width="50px">
@@ -192,10 +205,9 @@
 									<tbody>
 										<!-- Java 코드로 ingredientList를 반복하며 데이터를 출력 -->
 										<%
-										List<IngredientDTO> ingredientList = (List<IngredientDTO>) request.getAttribute("ingredientList");
+										//request 영역에 저장된 게시글 정보 가져오기
 										if (ingredientList != null) {
-											for (IngredientDTO ingredient : ingredientList) {
-										%>
+											for (IngredientDTO ingredient : ingredientList) {%>
 										<tr>
 											<td><%=ingredient.getIngre_name()%></td>
 											<td><%=ingredient.getIngre_stock()%></td>

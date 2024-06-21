@@ -141,6 +141,6 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>IngredientSearchCon</servlet-name>
-		<url-pattern>/IngredientSearchCon</url-pattern>
+		<url-pattern>/my_fridge.jsp</url-pattern>
 	</servlet-mapping>
 </web-app>

@@ -127,6 +127,22 @@ public class IngredientDTO {
     	this.ingre_loc = ingre_loc;
     }
     
+    public String toString() {
+        return "IngredientDTO{" +
+                "mem_id='" + mem_id + '\'' +
+                ", mem_pw='" + mem_pw + '\'' +
+                ", mem_type='" + mem_type + '\'' +
+                ", ingre_idx=" + ingre_idx +
+                ", ingre_name='" + ingre_name + '\'' +
+                ", purchased_at='" + purchased_at + '\'' +
+                ", expired_at='" + expired_at + '\'' +
+                ", ingre_unit='" + ingre_unit + '\'' +
+                ", ingre_stock='" + ingre_stock + '\'' +
+                ", ingre_bundle='" + ingre_bundle + '\'' +
+                ", ingre_loc='" + ingre_loc + '\'' +
+                '}';
+    }
+    
     //    public IngredientDTO(String mem_id, String ingre_name, String purchased_at, String expired_at,
 //    		String ingre_unit, String ingre_stock2, String ingre_bundle2, String ingre_loc) {
 //    	this.mem_id = mem_id;
