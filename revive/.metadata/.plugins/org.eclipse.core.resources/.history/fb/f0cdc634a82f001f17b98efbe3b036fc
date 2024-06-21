@@ -1,0 +1,40 @@
+package com.smhrd.member.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.smhrd.member.model.MemberDAO;
+import com.smhrd.member.model.MemberDTO;
+
+public class MemberIdFindCon extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    protected void service(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        // 1. 한글 인코딩 설정
+        request.setCharacterEncoding("UTF-8");
+
+        // 2. 파라미터 받기
+        String mem_name = request.getParameter("name"); // 이름 파라미터 받기
+        String mem_email = request.getParameter("mail") + "@" + request.getParameter("slt_mail"); // 이메일 파라미터 받기
+
+        // 3. DAO 호출 및 처리
+        MemberDAO dao = new MemberDAO();
+        List<MemberDTO> memberList = dao.findId(mem_name, mem_email);
+        
+        if(memberList!=null) {
+        // 4. 결과에 따른 처리 (예: 결과를 JSP로 전달)
+        request.setAttribute("memberList", memberList); // 결과를 request에 attribute로 설정
+        request.getRequestDispatcher("find_id_succ.jsp").forward(request, response); // JSP로 전달
+        System.out.println("아이디 찾기 성공");
+        }else {
+        	response.sendRedirect("find_id.jsp");
+        }
+    }
+}

@@ -52,6 +52,12 @@
 		mem_name=#{mem_name}, mem_phone=#{mem_phone}, mem_email=#{mem_email}
 		where mem_id=#{mem_id}
 	</update>
+	
+	<select id="findId"
+		parameterType="com.smhrd.member.model.MemberDTO"
+		resultType="com.smhrd.member.model.MemberDTO">
+		select mem_id, mem_name, mem_email from members where mem_name=#{mem_name} and mem_email=#{mem_email}
+	</select>
 
 	<select id="selectMemberInfoByID"
 		parameterType="com.smhrd.member.model.MemberDTO"

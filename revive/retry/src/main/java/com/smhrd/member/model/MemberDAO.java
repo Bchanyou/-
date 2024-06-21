@@ -1,5 +1,7 @@
 package com.smhrd.member.model;
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,6 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.smhrd.ingredient.database.IngredientMapper;
+import com.smhrd.ingredient.model.IngredientDTO;
 import com.smhrd.member.database.MemberMapper;
 import com.smhrd.member.database.SqlSessionManager;
 
@@ -120,6 +124,22 @@ public class MemberDAO {
 		return false; // 자동 로그인 실패
 	}
 
+	// 회원 아이디 찾기
+	public List<MemberDTO> findId(String mem_name, String mem_email) {
+		SqlSession sqlSession = factory.openSession(true);
+		List<MemberDTO> list = null;
+
+		try {
+			MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+			list = mapper.findId(mem_name, mem_email);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return list;
+	}
+
 	// 회원탈퇴 기능
 	public int withdrawal(String deleteEmail) {
 		SqlSession sqlSession = factory.openSession(true);
@@ -163,7 +183,7 @@ public class MemberDAO {
 		}
 		return cnt;
 	}// 회원정보 수정 끝
-	
+
 	// 회원정보수정페이지에서 현재 id를 기준으로 현재 pw를 가져오기
 	public int getMemberById(String saveID) {
 		SqlSession sqlSession = factory.openSession(true);
@@ -217,11 +237,10 @@ public class MemberDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	
+
 	// 회원 비밀번호와 맞는지 확인
 	public boolean checkPassword(String saveId, String currentPassword) {
 		return false;
 	}
-
 
 }

@@ -90,6 +90,18 @@
 		<description></description>
 		<servlet-class>com.smhrd.ingredient.controller.IngredientSearchCon</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>MemberIdFindCon</servlet-name>
+		<display-name>MemberIdFindCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.member.controller.MemberIdFindCon</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>MemberPwFindCon</servlet-name>
+		<display-name>MemberPwFindCon</display-name>
+		<description></description>
+		<servlet-class>com.smhrd.member.controller.MemberPwFindCon</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>MemberJoinCon</servlet-name>
@@ -142,5 +154,13 @@
 	<servlet-mapping>
 		<servlet-name>IngredientSearchCon</servlet-name>
 		<url-pattern>/my_fridge.jsp</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberIdFindCon</servlet-name>
+		<url-pattern>/MemberIdFindCon</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>MemberPwFindCon</servlet-name>
+		<url-pattern>/MemberPwFindCon</url-pattern>
 	</servlet-mapping>
 </web-app>

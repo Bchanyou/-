@@ -1,6 +1,9 @@
 package com.smhrd.member.database;
 
 import com.smhrd.member.model.MemberDTO;
+
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
@@ -18,6 +21,9 @@ public interface MemberMapper {
     int deletMember(@Param("mem_email") String mem_email);
 
     int updateMember(MemberDTO member);
+
+    List<MemberDTO> findId(@Param("mem_name") String mem_name, @Param("mem_email") String mem_email);
+
 
 
     // 다른 메서드들...
