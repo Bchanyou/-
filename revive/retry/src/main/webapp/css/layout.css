@@ -11,8 +11,8 @@
  
  ********************************************************/
 
- body {width:100%;color:#000;font-size:14px;font-weight:500;line-height:1.4;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;letter-spacing:-0.02em;word-break: keep-all;overflow:hidden;overflow-y:scroll;overflow-x:scroll;}
- #wrap {position:relative;width:100%;min-width: 1300px;}
+ body {width:100%;height:100%;color:#000;font-size:14px;font-weight:500;line-height:1.4;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;letter-spacing:-0.02em;word-break: keep-all;overflow:hidden;overflow-y:scroll;overflow-x:scroll;}
+ #wrap {position:relative;width:100%;min-width: 1300px;height:100%;}
  
 
 /********************************************************
@@ -67,8 +67,10 @@ nav#gnb > ul > li a:hover {color:#2EC758;}
 /* Margin & Padding */ 
 .my20 {margin:20px 0;}
 .my30 {margin:30px 0;}
+.my50 {margin:50px 0;}
 .my120 {margin:120px 0;}
-.pa30 {}
+.pa30 {padding : 30px;}
+.pa40 {padding : 40px;}
 .pa50 {padding:50px;}
 .px50 {padding:0 50px;}
 .px100 {padding:0 100px;}
@@ -98,20 +100,21 @@ nav#gnb > ul > li a:hover {color:#2EC758;}
 #sub_tit p {font-size:18px;font-weight: 400;margin-top:20px;}
 
 /* Sub Content */
-
+.sub_cont {margin-top:100px;margin-bottom:150px;}
 .guide_box {background:#f4f4f4;}
-.ico_info {background: url(../images/sub/circle_info.png) no-repeat 0 3px;padding-left:25px;font-size:16px;font-weight: 600;color:#888;background-size:16px;}
+.ico_info {background: url(../images/sub/circle_info.png) no-repeat 0 3px;padding-left:25px;font-size:16px;font-weight: 600;color:#aaa;background-size:16px;}
+.info_box {display: flex;align-items: center;justify-content: center;background:#f2f2f2;}
 
 
 /* Title */
 .big_tit h3,
 .mid_tit {margin-bottom:30px;}
 .big_tit h3 *,
-.mid_tit h4 * {font-family: 'KorailRoundGothicBold';}
+.mid_tit * {font-family: 'KorailRoundGothicBold';}
 .big_tit {text-align: center;}
 .big_tit h3 strong {font-size:48px;}
 .big_tit p {font-size:18px;color:#444;}
-.mid_tit h4 strong {font-size:34px;}
+.mid_tit strong {font-size:34px;}
 
 
 
@@ -119,19 +122,23 @@ nav#gnb > ul > li a:hover {color:#2EC758;}
  *  Table
  *************************************************************************************************/
 
+ /* Column Table */
 .bdr_wrap {border-top:3px solid #2EC758;}
 .bdr_wrap th,
-.bdr_wrap td {font-size:20px;border-bottom: 1px solid #ccc;padding:15px 10px;}
+.bdr_wrap td {font-size:20px;border-bottom: 1px solid #ccc;padding:10px;}
 .bdr_wrap table td {text-align: center;}
-.bdr_wrap tr td:nth-child(2) {text-align: left;}
-table .btn_bdr {display: inline-block;}
-table .btn_bdr a {display:inline-block;font-size:18px;color:#888;line-height: 1;padding:10px 20px;border: 1px solid #888;border-radius: 5px;}
-table .btn_bdr a:hover {color:#000;border-color: #000;font-weight: 600;}
+table .btn.bdr {display: inline-block;}
+table .btn.bdr a {display:inline-block;font-size:18px;color:#888;line-height: 1;padding:10px 20px;border: 1px solid #888;border-radius: 5px;}
+table .btn.bdr a:hover {color:#000;border-color: #000;font-weight: 600;}
 
 /* Row Table */
 .bdr_wrap.row th,
 .bdr_wrap.row td {border-bottom: none;}
 .bdr_wrap.row th {text-align: left;}
+
+/* Write Table */
+.tb_write {text-align: left;}
+.tb_write th {padding:30px;} 
 
 
 /*************************************************************************************************
@@ -140,14 +147,15 @@ table .btn_bdr a:hover {color:#000;border-color: #000;font-weight: 600;}
  
 .btn_wrap {display: flex;justify-content: space-between;}
 .btn_wrap.center {justify-content: center;}
-.btn_wrap a {display: inline-block;padding:0 20px;line-height: 56px;}
-button {display:inline-block;width:140px;line-height:56px;font-size:20px;font-weight: 600;border-radius: 5px;vertical-align: middle;}
-button.w200 {width:200px;}
-.lb button {margin-right:5px;}
-.rb button {margin-left:5px;}
-.btn_bg {background:#ddd;color:#444;}
-.btn_grn {background:#2EC758;color:#fff;}
-.row_del a {display: block;padding:5px;}
+.btn_wrap.center .btn + .btn {margin-left:10px;}
+.btn {display: inline-block;width:140px;padding:0 20px;line-height: 56px;font-size:20px;font-weight: 600;border-radius: 5px;vertical-align: middle;text-align: center;}
+.btn.w200 {width:200px;}
+.btn.bg {background:#ddd;color:#444;}
+.btn.grn {background:#2EC758;color:#fff;}
+.btn.bdr {color:#2EC758;border:1px solid #2EC758;border-radius: 5px;}
+.lb .btn {margin-right:5px;}
+.rb .btn {margin-left:5px;}
+.row_del a {display: block;}
 .row_del a img {display: block;}
 
 

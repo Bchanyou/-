@@ -15,7 +15,7 @@
 		</div>
 
 		<!-- Form_Find_ID -->
-		<form class="tb_wrap" method="post" action="MemberIdFindCon" name="Form_Find_ID">
+		<form class="tb_wrap" method="post" action="" name="">
 			<div class="bdr_wrap row">
 
 				<p class="find_guide">
@@ -29,9 +29,9 @@
 					</colgroup>
 					<tbody>
 						<tr>
-							<th>이름</th>
-							<td><input type="text" name="name" maxlength="50"
-								placeholder="이름을 입력해주세요" autofocus></td>
+							<th>아이디</th>
+							<td><input type="text" name="id" maxlength="50"
+								placeholder="아이디를 입력해주세요" autofocus></td>
 						</tr>
 						<tr>
 							<th>이메일</th>

@@ -18,16 +18,16 @@
 			<div class="find_result">
 
 				<!-- 이름, 아이디 반환 -->
-                <p class="font">
-                    <%= request.getAttribute("userName") %>님의 아이디는 &#34;<strong><%= request.getAttribute("userId") %></strong>&#34; 입니다.
-                </p>
+				<p class="font">
+					{userName}님의 아이디는 &#34;<strong>{userId}</strong>&#34; 입니다.
+				</p>
 
-            </div>
-            <div class="btn_wrap center my30">
-                <a href="#" class="btn bdr w200">비밀번호 찾기</a> <a href="login.jsp"
-                    class="btn grn w200">로그인 하기</a>
-            </div>
-        </div>
+			</div>
+			<div class="btn_wrap center my30">
+				<a href="find_pw.jsp" class="btn bdr w200">비밀번호 찾기</a> <a href="login.jsp"
+					class="btn grn w200">로그인 하기</a>
+			</div>
+		</div>
 
 	</section>
 
