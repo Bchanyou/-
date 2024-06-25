@@ -1,0 +1,139 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="imagetoolbar" content="no" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="사이트주소">
+    <meta property="og:title" content="냉장고를부탁해">
+    <meta property="og:description" content="사이트설명">
+    <meta property="og:image" content="사이트주소/images/common/kakao_logo_400x210.png">
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="description" content="사이트설명" />
+    <meta name="keywords" content="사이트관련키워드" />
+    <meta name="classification" content="사이트분류" />
+    <meta name="author" content="TeamChobao" />
+    <meta name="title" content="냉장고를부탁해">
+    <meta name="apple-mobile-web-app-title" content="냉장고를부탁해">
+    <meta name="subject" content="사이트주제" />
+
+    <title>냉장고를부탁해</title>
+
+    <!--Add Css-->
+    <link rel="stylesheet" href="css/swiper.min.css" media="all" />
+
+    <!--Basic Css-->
+    <link rel="stylesheet" href="css/style.css" media="all" />
+
+    <!--Jquery Basic-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js" charset="utf-8"></script>
+
+    <!--Add Js-->
+    <script src="https://kit.fontawesome.com/b9310abc97.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/swiper.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/slider.js" charset="utf-8"></script>
+
+    <!--Common Js-->
+    <script type="text/javascript" src="js/common.js" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div id="wrap">
+
+        <!-- Header -->
+        <header id="header" class="px50">
+            <!-- Header 내용 생략 -->
+        </header>
+        <!-- //Header -->
+
+        <!-- Util Page -->
+        <main class="py120 util_page">
+            <section id="util_box">
+                <div class="big_tit">
+                    <h3><strong class="font">회원정보수정</strong></h3>
+                </div>
+
+                <!-- Form_Mem_Modify -->
+                <form method="post" action="" name="editForm">
+                    <div class="bdr_wrap row">
+                        <table>
+                            <caption>회원정보수정</caption>
+                            <colgroup>
+                                <col width="30%">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>아이디</th>
+                                    <td style="text-align: left;">
+                                        <c:out value="${savedId}" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>현재 비밀번호</th>
+                                    <td><input type="password" name="pw"
+                                            placeholder="현재 비밀번호를 입력해주세요"></td>
+                                </tr>
+                                <tr>
+                                    <th>신규 비밀번호</th>
+                                    <td><input type="password" name="new_pw"
+                                            placeholder="신규 비밀번호를 입력해주세요"></td>
+                                </tr>
+                                <tr>
+                                    <th>신규 비밀번호 확인</th>
+                                    <td><input type="password" name="new_pw_check"
+                                            placeholder="신규 비밀번호를 한번 더 입력해주세요"></td>
+                                </tr>
+                                <tr>
+                                    <th>이름</th>
+                                    <td><input type="text" name="name" placeholder="이름을 입력해주세요"></td>
+                                </tr>
+                                <tr>
+                                    <th>휴대폰 번호</th>
+                                    <td><input type="text" name="phone" placeholder="휴대폰 번호를 입력해주세요"></td>
+                                </tr>
+                                <tr>
+                                    <th>이메일</th>
+                                    <td>
+                                        <input type="text" name="mail" placeholder="이메일을 입력해주세요">
+                                        <select name="slt_mail">
+                                            <option value="naver.com">naver.com</option>
+                                            <option value="gmail.com">gmail.com</option>
+                                            <option value="hanmail.net">hanmail.net</option>
+                                            <option value="nate.com">nate.com</option>
+                                            <option value="daum.net">daum.net</option>
+                                            <option value="직접입력">직접입력</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="center mt30">
+                        <button type="submit" class="btn_point">수정 완료</button>
+                    </div>
+                </form>
+                <!-- //Form_Mem_Modify -->
+
+            </section>
+        </main>
+        <!-- //Util Page -->
+
+        <!-- Footer -->
+        <!-- Footer 내용 생략 -->
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.ingredient.database.IngredientMapper">
+
+    <!-- 품목 추가 -->
+    <insert id="insertIngredient" parameterType="com.smhrd.ingredient.model.IngredientDTO">
+        INSERT INTO ingredients (mem_id, ingre_name, purchased_at, expired_at, ingre_unit, ingre_stock, ingre_bundle, ingre_loc)
+        VALUES (#{mem_id}, #{ingre_name}, #{purchased_at}, #{expired_at}, #{ingre_unit}, #{ingre_stock}, #{ingre_bundle}, #{ingre_loc})
+    </insert>
+    
+    <!-- 품목 조회 -->
+    <select id="listIngredient" resultType="com.smhrd.ingredient.model.IngredientDTO" parameterType="String">
+        SELECT ingre_name, ingre_stock, purchased_at, expired_at ,ingre_loc
+        FROM ingredients
+        WHERE mem_id=#{mem_id}
+    </select>
+    
+<!-- 유통기한이 현재 기준으로 5일 남은 상품 조회 -->
+<select id="selectProductsByExpirationDate"
+        resultType="com.smhrd.ingredient.model.IngredientDTO">
+    SELECT *
+    FROM ingredients
+    WHERE mem_id=#{mem_id} DATEDIFF(expiration_date, CURDATE()) &lt;= 5;
+</select>
+
+<!-- 수량을 기준으로 1개 남은 상품 조회 -->
+<select id="selectProductsByStock"
+        resultType="com.smhrd.ingredient.model.IngredientDTO">
+    SELECT ingre_name
+    FROM ingredients
+    WHERE mem_id=#{mem_id} AND stock &lt;= 1
+</select>
+
+</mapper>

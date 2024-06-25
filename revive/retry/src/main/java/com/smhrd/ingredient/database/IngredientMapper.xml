@@ -14,5 +14,57 @@
         FROM ingredients
         WHERE mem_id=#{mem_id}
     </select>
+    
+<!-- 유통기한이 현재 기준으로 5일 남은 상품 조회 -->
+<select id="selectProductsByExpirationDate"
+        resultType="com.smhrd.ingredient.model.IngredientDTO">
+    SELECT *
+    FROM ingredients
+    WHERE mem_id=#{mem_id} DATEDIFF(expiration_date, CURDATE()) &lt;= 5;
+</select>
+
+<!-- 수량을 기준으로 1개 남은 상품 조회 -->
+<select id="selectProductsByStock"
+        resultType="com.smhrd.ingredient.model.IngredientDTO">
+    SELECT ingre_name
+    FROM ingredients
+    WHERE mem_id=#{mem_id} AND stock &lt;= 1
+</select>
+
+<!-- 수량을 기준으로 1개 남은 상품 조회 -->
+<select id="selectProductsByStockBundle"
+        resultType="com.smhrd.ingredient.model.IngredientDTO">
+    SELECT ingre_name
+    FROM ingredients
+    WHERE mem_id=#{mem_id} AND stock &lt;= 1 AND ingre_bundle IS NOT NULL
+</select>
+
+<!-- 유통기한이 현재 기준으로 지정된 날짜 이내의 상품 조회 -->
+<select id="selectProductsByExpirationDate"
+        resultType="com.smhrd.ingredient.model.IngredientDTO">
+    SELECT *
+    FROM ingredients
+    WHERE mem_id=#{mem_id} AND DATEDIFF(expiration_date, CURDATE()) &lt;= #{days}
+</select>
+
+<!-- 수량을 기준으로 지정된 재고 이하의 상품 조회 -->
+<select id="selectProductsByStock"
+        resultType="com.smhrd.ingredient.model.IngredientDTO">
+    SELECT ingre_name
+    FROM ingredients
+    WHERE mem_id=#{mem_id} AND stock &lt;= #{stockLimit}
+</select>
+
+<!-- 수량을 기준으로 지정된 재고 이하이면서 묶음 정보가 있는 상품 조회 -->
+<select id="selectProductsByStockBundle"
+        resultType="com.smhrd.ingredient.model.IngredientDTO">
+    SELECT ingre_name
+    FROM ingredients
+    WHERE mem_id=#{mem_id} AND stock &lt;= #{stockLimit} AND ingre_bundle IS NOT NULL
+</select>
+
+
+
+
 
 </mapper>

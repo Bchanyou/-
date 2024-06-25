@@ -27,7 +27,7 @@
 						<tr>
 							<th>아이디</th>
 							<td class="disf"><input type="text" name="id" maxlength="50"
-								placeholder="아이디를 입력해주세요" autofocus>
+								placeholder="아이디를 입력해주세요" autofocus><input type="hidden" name="id_check">
 								<button type="button" class="un_check btn grn"
 									onclick="submitForm('MemberCheckCon')">중복확인</button></td>
 						</tr>

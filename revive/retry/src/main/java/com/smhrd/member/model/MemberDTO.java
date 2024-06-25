@@ -84,7 +84,13 @@ public class MemberDTO {
         this.mem_type = mem_type;
     }
 
-    // 기본 생성자
+    public MemberDTO(String mem_id, String mem_pw) {
+		super();
+		this.mem_id = mem_id;
+		this.mem_pw = mem_pw;
+	}
+
+	// 기본 생성자
     public MemberDTO() {
         super();
     }

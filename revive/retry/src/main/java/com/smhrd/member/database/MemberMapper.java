@@ -15,6 +15,8 @@ public interface MemberMapper {
     int checkMemberEmail(@Param("real_email") String real_email);
 
     MemberDTO selectMember(@Param("mem_id") String mem_id, @Param("mem_pw") String mem_pw);
+    
+    MemberDTO selectMember(MemberDTO member);
 
     int memberInsert(MemberDTO member);
 

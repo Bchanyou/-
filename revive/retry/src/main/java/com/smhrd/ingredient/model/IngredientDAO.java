@@ -24,8 +24,10 @@ public class IngredientDAO {
 
 		int cnt = 0;
 		try {
-			cnt = sqlSession.insert("com.smhrd.ingredient.database.IngredientMapper.insertIngredient", ingredient);// mapper안에 작성한 매개변수
-																									// 찾기
+			cnt = sqlSession.insert("com.smhrd.ingredient.database.IngredientMapper.insertIngredient", ingredient);// mapper안에
+																													// 작성한
+																													// 매개변수
+			// 찾기
 
 			if (cnt > 0) {
 				sqlSession.commit();
@@ -42,21 +44,37 @@ public class IngredientDAO {
 
 		return cnt;
 	}// 품목 추가 끝
-	
-	 // 모든 품목 조회
-    public List<IngredientDTO> search(String mem_id) {
-        SqlSession sqlSession = factory.openSession(true); // true 반드시 넣기
-        List<IngredientDTO> list = null;
 
-        try {
-            IngredientMapper mapper = sqlSession.getMapper(IngredientMapper.class);
-            list = mapper.listIngredient(mem_id); // mem_id를 이용해 해당 회원의 품목 조회
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            sqlSession.close();
-        }
-        return list;
-    }// 품목 조회 끝
+	// 모든 품목 조회
+	public List<IngredientDTO> search(String mem_id) {
+		SqlSession sqlSession = factory.openSession(true); // true 반드시 넣기
+		List<IngredientDTO> list = null;
+
+		try {
+			IngredientMapper mapper = sqlSession.getMapper(IngredientMapper.class);
+			list = mapper.listIngredient(mem_id); // mem_id를 이용해 해당 회원의 품목 조회
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return list;
+	}// 품목 조회 끝
+
+	// 유통기한 5일 전 알림
+	public List<IngredientDTO> searchEd(String mem_id) {
+		SqlSession sqlSession = factory.openSession(true); // true 반드시 넣기
+		List<IngredientDTO> list = null;
+
+		try {
+			IngredientMapper mapper = sqlSession.getMapper(IngredientMapper.class);
+			list = mapper.selectProductsByExpirationDate(mem_id); // mem_id를 이용해 해당 회원의 품목 조회
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return list;
+	}// 유통기한 알림
 
 }

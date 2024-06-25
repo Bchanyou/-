@@ -33,45 +33,39 @@ public class MemberLoginCon extends HttpServlet {
         MemberDTO member = dao.login(new MemberDTO(mem_id, mem_pw, null, null, null, null, null));
 
         if (member != null) {
+            HttpSession session = request.getSession(true); // 세션이 없으면 새로 생성
+            session.setAttribute("loginMember", member);
+
             // 아이디 저장 처리
             if (isSaveIdChecked) {
-            	HttpSession session = request.getSession(true); // 세션이 없으면 새로 생성
-            	session.setAttribute("loginMember", member);
                 session.setAttribute("savedId", mem_id);
-                session.removeAttribute("loginMember");
-                System.out.println("아이디저장");
+                Cookie idCookie = new Cookie("savedId", mem_id);
+                idCookie.setMaxAge(0); // 쿠키 삭제
+                response.addCookie(idCookie);
+                System.out.println("아이디 저장");
             } else {
-            	HttpSession session = request.getSession(true); // 세션이 없으면 새로 생성
-            	session.setAttribute("loginMember", member);
-                session.invalidate();
+                session.removeAttribute("savedId");
                 Cookie idCookie = new Cookie("savedId", mem_id);
                 idCookie.setMaxAge(60 * 60 * 24 * 30); // 쿠키 유효기간 설정 (30일)
                 response.addCookie(idCookie);
-                System.out.println("아이디저장안됨");
+                System.out.println("아이디 저장 안됨");
                 System.out.println("Cookie ID: " + idCookie.getValue());
             }
 
             // 자동 로그인 처리
             if (isSaveLoginChecked) {
-            	HttpSession session = request.getSession(true); // 세션이 없으면 새로 생성
-            	session.setAttribute("loginMember", member);
-                // 세션 유지 시간 설정 (예: 30일)
-                int maxAge = 30 * 24 * 60 * 60; // 30일을 초로 계산
-                session.setMaxInactiveInterval(maxAge);
+                session.setMaxInactiveInterval(30 * 24 * 60 * 60); // 세션 유지 시간 설정 (30일)
                 session.setAttribute("autoLogin", true);
-                System.out.println("자동로그인");
+                System.out.println("자동 로그인");
             } else {
-            	HttpSession session = request.getSession(true); // 세션이 없으면 새로 생성
-            	
                 session.setAttribute("autoLogin", false);
-                System.out.println("자동로그인안됨");
+                System.out.println("자동 로그인 안됨");
             }
 
             response.sendRedirect("my_fridge.jsp");
             System.out.println("로그인 성공");
             System.out.println("Session ID: " + member.getMem_id());
             System.out.println("Session Password: " + member.getMem_pw());
-
         } else {
             response.sendRedirect("login.html");
             System.out.println("로그인 실패");

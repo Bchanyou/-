@@ -74,20 +74,11 @@
 
 				<div class="hdr_util">
 					<ul>
-						<%
-						HttpSession loginSession = request.getSession(false);
-
-						// 세션과 쿠키를 동시에 확인하여 로그인 상태를 판별
-						if (loginSession != null && loginSession.getAttribute("loginMember") != null) {%>
-							<li><a href="mem_info.jsp">회원정보관리</a></li>
-							<li><a href="MemberLogoutCon">로그아웃</a></li>
-						<%} else {
-						%>
+						<li><a href="mem_info.jsp">회원정보관리</a></li>
+						<li><a href="MemberLogoutCon">로그아웃</a></li>
 						<li><a href="login.jsp">로그인</a></li>
 						<li><a href="join.html">회원가입</a></li>
-						<%
-						}
-						%>
+						
 					</ul>
 				</div>
 

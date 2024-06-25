@@ -50,7 +50,7 @@
 						</div>
 					</div>
 					<div class="rb">
-						<span><a href="#">아이디 찾기</a></span> <span><a href="#">비밀번호
+						<span><a href="find_id.jsp">아이디 찾기</a></span> <span><a href="find_pw.jsp">비밀번호
 								찾기</a></span>
 					</div>
 				</div>

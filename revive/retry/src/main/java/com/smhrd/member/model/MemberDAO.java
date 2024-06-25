@@ -68,29 +68,16 @@ public class MemberDAO {
 	}
 
 	// 로그인 기능
-	public MemberDTO login(MemberDTO member) {
-		SqlSession sqlSession = factory.openSession(true);// true 반드시 넣기
-
-		MemberDTO mem = null;
-
-		try {
-			mem = sqlSession.selectOne("com.smhrd.member.database.MemberMapper.selectMember", member);
-
-			if (mem != null) {
-				sqlSession.commit();
-			} else {
-				sqlSession.rollback();
-			}
-
-		} catch (Exception e) {
-			System.out.println("로그인 실패");
-			e.printStackTrace();
-		} finally {
-			sqlSession.close();
-		}
-
-		return mem;
-	}// 로그인 끝
+	public MemberDTO login(MemberDTO dto) {
+        MemberDTO member = null;
+        try (SqlSession sqlSession = factory.openSession()) {
+            MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+            member = mapper.selectMember(dto);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return member;
+    }// 로그인 끝
 
 	public boolean autologin(HttpServletRequest request, HttpServletResponse response) {
 		// 사용자의 브라우저에서 쿠키를 받아옵니다.
@@ -239,8 +226,15 @@ public class MemberDAO {
 	}
 
 	// 회원 비밀번호와 맞는지 확인
-	public boolean checkPassword(String saveId, String currentPassword) {
-		return false;
-	}
+	public MemberDTO login2(MemberDTO dto) {
+        MemberDTO member = null;
+        try (SqlSession sqlSession = factory.openSession()) {
+            MemberMapper mapper = sqlSession.getMapper(MemberMapper.class);
+            member = mapper.selectMember(dto);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return member;
+    }// 로그인 끝
 
 }

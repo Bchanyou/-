@@ -104,6 +104,19 @@
       <description></description>
       <servlet-class>com.smhrd.ingredient.controller.IngredientConsumeCon</servlet-class>
    </servlet>
+   <servlet>
+   	<servlet-name>MemberEditLoginCon</servlet-name>
+   	<display-name>MemberEditLoginCon</display-name>
+   	<description></description>
+   	<servlet-class>com.smhrd.member.controller.MemberEditLoginCon</servlet-class>
+   </servlet>
+   <servlet>
+   	<description>
+   	</description>
+   	<display-name>IngredientAlarmCon</display-name>
+   	<servlet-name>IngredientAlarmCon</servlet-name>
+   	<servlet-class>com.smhrd.ingredient.controller.IngredientAlarmCon</servlet-class>
+   </servlet>
 
    <servlet-mapping>
       <servlet-name>MemberJoinCon</servlet-name>
@@ -168,5 +181,13 @@
    <servlet-mapping>
       <servlet-name>IngredientConsumeCon</servlet-name>
       <url-pattern>/IngredientConsumeCon</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>MemberEditLoginCon</servlet-name>
+   	<url-pattern>/MemberEditLoginCon</url-pattern>
+   </servlet-mapping>
+   <servlet-mapping>
+   	<servlet-name>IngredientAlarmCon</servlet-name>
+   	<url-pattern>/IngredientAlarmCon</url-pattern>
    </servlet-mapping>
 </web-app>

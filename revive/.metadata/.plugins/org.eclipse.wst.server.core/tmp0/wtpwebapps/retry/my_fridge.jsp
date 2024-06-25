@@ -2,12 +2,12 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+List<IngredientDTO> ingredientList = (List<IngredientDTO>) request.getAttribute("ingredientList");
+%>
+
 <%@include file="header.jsp"%>
 
-
-<%
-    List<IngredientDTO> ingredientList = (List<IngredientDTO>) request.getAttribute("ingredientList");
-%>
 
 <!-- container -->
 <main id="sub" class="container">
@@ -69,9 +69,10 @@
 										<col width="50px">
 										<col>
 										<col>
+										<col>
 										<col width="15%">
 										<col width="15%">
-										<col width="20%">
+										<col width="15%">
 									</colgroup>
 									<thead>
 										<tr>
@@ -82,6 +83,7 @@
 												</div>
 											</th>
 											<th>품목명</th>
+											<th>단위</th>
 											<th>수량</th>
 											<th>구매날짜</th>
 											<th>유통기한</th>
@@ -93,7 +95,8 @@
 										<%
 										//request 영역에 저장된 게시글 정보 가져오기
 										if (ingredientList != null) {
-											for (IngredientDTO ingredient : ingredientList) {%>
+											for (IngredientDTO ingredient : ingredientList) {
+										%>
 										<tr>
 											<td><%=ingredient.getIngre_name()%></td>
 											<td><%=ingredient.getIngre_stock()%></td>
@@ -105,19 +108,17 @@
 										} else {
 										%>
 										<tr>
-											<td colspan="4">보유중인 품목이 없습니다.</td>
+											<td colspan="7">
+												<div class="info_box null_box">
+													<p class="ico_info">보유중인 품목이 없습니다</p>
+												</div>
+											</td>
 										</tr>
 										<%
 										}
 										%>
 									</tbody>
 								</table>
-
-								<!-- 보관중인 품목이 없을 경우 보여지는 박스/ 
-                                        아래 전체,선택삭제 버튼도 마찬가지 -->
-								<div class="info_box null_box">
-									<p class="ico_info">보유중인 품목이 없습니다</p>
-								</div>
 
 							</div>
 
@@ -129,9 +130,237 @@
 								</div>
 							</div>
 						</div>
-						<div class="tabs_item" id="tab2">탭내용2</div>
-						<div class="tabs_item" id="tab3">탭내용3</div>
-						<div class="tabs_item" id="tab4">탭내용3</div>
+						<div class="tabs_item" id="tab2">
+							<div class="mid_tit my20 loca">
+								<h4>
+									<span>02</span><strong>야채칸</strong>
+								</h4>
+							</div>
+
+							<div class="bdr_wrap">
+								<table class="fridge_list">
+									<caption>야채칸 보유 품목</caption>
+									<colgroup>
+										<col width="50px">
+										<col>
+										<col>
+										<col>
+										<col width="15%">
+										<col width="15%">
+										<col width="15%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>
+												<div class="chk_box">
+													<input type="checkbox" id="check_all" class="chk">
+													<label for="check_all"></label>
+												</div>
+											</th>
+											<th>품목명</th>
+											<th>단위</th>
+											<th>수량</th>
+											<th>구매날짜</th>
+											<th>유통기한</th>
+											<th>관리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- Java 코드로 ingredientList를 반복하며 데이터를 출력 -->
+										<%
+										//request 영역에 저장된 게시글 정보 가져오기
+										if (ingredientList != null) {
+											for (IngredientDTO ingredient : ingredientList) {
+										%>
+										<tr>
+											<td>
+												<div class="chk_box">
+													<input type="checkbox" id="check1" class="chk"> <label
+														for="check1"></label>
+												</div>
+											</td>
+											<td><%=ingredient.getIngre_name()%></td>
+											<td><%=ingredient.getIngre_stock()%></td>
+											<td><%=ingredient.getPurchased_at()%></td>
+											<td><%=ingredient.getExpired_at()%></td>
+										</tr>
+										<%
+										}
+										} else {
+										%>
+										<tr>
+											<td colspan="7">
+												<div class="info_box null_box">
+													<p class="ico_info">보유중인 품목이 없습니다</p>
+												</div>
+											</td>
+										</tr>
+										<%
+										}
+										%>
+									</tbody>
+								</table>
+
+							</div>
+
+							<div class="btn_wrap my30">
+								<div class="lb"></div>
+								<div class="rb">
+									<button class="btn bg check_del" type="button">선택삭제</button>
+									<button class="btn grn btn_modal" type="button">품목추가</button>
+								</div>
+							</div>
+						</div>
+						<div class="tabs_item" id="tab3">
+							<div class="mid_tit my20 loca">
+								<h4>
+									<span>03</span><strong>날개칸</strong>
+								</h4>
+							</div>
+
+							<div class="bdr_wrap">
+								<table class="fridge_list">
+									<caption>날개칸 보유 품목</caption>
+									<colgroup>
+										<col width="50px">
+										<col>
+										<col>
+										<col>
+										<col width="15%">
+										<col width="15%">
+										<col width="15%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>
+												<div class="chk_box">
+													<input type="checkbox" id="check_all" class="chk">
+													<label for="check_all"></label>
+												</div>
+											</th>
+											<th>품목명</th>
+											<th>단위</th>
+											<th>수량</th>
+											<th>구매날짜</th>
+											<th>유통기한</th>
+											<th>관리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- Java 코드로 ingredientList를 반복하며 데이터를 출력 -->
+										<%
+										//request 영역에 저장된 게시글 정보 가져오기
+										if (ingredientList != null) {
+											for (IngredientDTO ingredient : ingredientList) {
+										%>
+										<tr>
+											<td><%=ingredient.getIngre_name()%></td>
+											<td><%=ingredient.getIngre_stock()%></td>
+											<td><%=ingredient.getPurchased_at()%></td>
+											<td><%=ingredient.getExpired_at()%></td>
+										</tr>
+										<%
+										}
+										} else {
+										%>
+										<tr>
+											<td colspan="7">
+												<div class="info_box null_box">
+													<p class="ico_info">보유중인 품목이 없습니다</p>
+												</div>
+											</td>
+										</tr>
+										<%
+										}
+										%>
+									</tbody>
+								</table>
+
+							</div>
+
+							<div class="btn_wrap my30">
+								<div class="lb"></div>
+								<div class="rb">
+									<button class="btn bg check_del" type="button">선택삭제</button>
+									<button class="btn grn btn_modal" type="button">품목추가</button>
+								</div>
+							</div>
+						</div>
+						<div class="tabs_item" id="tab4">
+							<div class="mid_tit my20 loca">
+								<h4>
+									<span>03</span><strong>날개칸</strong>
+								</h4>
+							</div>
+
+							<div class="bdr_wrap">
+								<table class="fridge_list">
+									<caption>날개칸 보유 품목</caption>
+									<colgroup>
+										<col width="50px">
+										<col>
+										<col>
+										<col>
+										<col width="15%">
+										<col width="15%">
+										<col width="15%">
+									</colgroup>
+									<thead>
+										<tr>
+											<th>
+												<div class="chk_box">
+													<input type="checkbox" id="check_all" class="chk">
+													<label for="check_all"></label>
+												</div>
+											</th>
+											<th>품목명</th>
+											<th>단위</th>
+											<th>수량</th>
+											<th>구매날짜</th>
+											<th>유통기한</th>
+											<th>관리</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!-- Java 코드로 ingredientList를 반복하며 데이터를 출력 -->
+										<%
+										//request 영역에 저장된 게시글 정보 가져오기
+										if (ingredientList != null) {
+											for (IngredientDTO ingredient : ingredientList) {
+										%>
+										<tr>
+											<td><%=ingredient.getIngre_name()%></td>
+											<td><%=ingredient.getIngre_stock()%></td>
+											<td><%=ingredient.getPurchased_at()%></td>
+											<td><%=ingredient.getExpired_at()%></td>
+										</tr>
+										<%
+										}
+										} else {
+										%>
+										<tr>
+											<td colspan="7">
+												<div class="info_box null_box">
+													<p class="ico_info">보유중인 품목이 없습니다</p>
+												</div>
+											</td>
+										</tr>
+										<%
+										}
+										%>
+									</tbody>
+								</table>
+
+							</div>
+
+							<div class="btn_wrap my30">
+								<div class="lb"></div>
+								<div class="rb">
+									<button class="btn bg check_del" type="button">선택삭제</button>
+									<button class="btn grn btn_modal" type="button">품목추가</button>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 
