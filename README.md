@@ -51,7 +51,7 @@
 ![image](https://github.com/Bchanyou/Take_care_of_the_fridge/assets/162541713/092e51e4-ce63-4973-98dc-ece8088c0445)
 
 ### 캘린더
-![image](https://user-images.githubusercontent.com/25995055/178401127-287e6de2-4396-49fc-a107-59c4d5cd55c7.png)
+![image](https://github.com/Bchanyou/Take_care_of_the_fridge/assets/162541713/276e0632-f8d4-4ff6-95f0-ae084b9ded4c)
 
 ### my냉장고
 ![image](https://github.com/Bchanyou/Take_care_of_the_fridge/assets/162541713/b338473c-9b69-4673-857a-9f2cd4c6f430)
@@ -61,6 +61,10 @@
 
 ### 고객센터
 ![image](https://github.com/Bchanyou/Take_care_of_the_fridge/assets/162541713/79a07729-f5e4-4e9d-8cfe-3a0c62d13901)
+
+### 알림
+![image](https://github.com/Bchanyou/Take_care_of_the_fridge/assets/162541713/7f725a98-e1bd-444a-87f2-f5159a3897c4)
+
 
 
 ## 👨‍👩‍👦‍👦 팀원 역할
