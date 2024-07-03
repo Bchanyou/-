@@ -1,0 +1,268 @@
+@charset "utf-8";
+
+/*
+ * File Name : layout.css
+ * 작성일 : 2024-06-14
+ */
+
+/********************************************************
+ 
+ *  Common
+ 
+ ********************************************************/
+
+ body {width:100%;height:100%;color:#000;font-size:14px;font-weight:500;line-height:1.4;font-family:'Pretendard','맑은 고딕', 'Dotum', '돋움', verdana, sans-serif;letter-spacing:-0.02em;word-break: keep-all;overflow:hidden;overflow-y:scroll;overflow-x:scroll;}
+ #wrap {position:relative;width:100%;min-width: 1300px;height:100%;}
+ 
+
+/********************************************************
+ 
+ *  Header
+ 
+ ********************************************************/
+ 
+.hdr_inner {display: flex;align-items: center;justify-content: space-between;}
+#hdr_logo a {font-size:30px;text-align: center;}
+#hdr_logo a span {color:#2EC758;}
+#hdr_logo a {display:block;max-width:200px;color:#000}
+
+/* index header */
+.main_on {position: absolute; left: 0; top: 0; width: 100%; background:none;}
+.main_on .hdr_inner {padding:30px 0;}
+.main_on #hdr_logo a, 
+.main_on #hdr_logo a span,
+.main_on .hdr_util a {color: #fff;text-shadow:0 0 5px #00000030;}
+.main_on nav#gnb {display:none;}
+
+
+/* GNB */
+
+nav#gnb {margin:0 50px;}
+nav#gnb > ul {display: flex;align-items: center;height:100px;}
+nav#gnb > ul > li {margin: 0 30px;} 
+nav#gnb a {font-size:20px;padding:5px;color:#000;font-family: 'KorailRoundGothicBold';}
+nav#gnb a:hover {color:#2EC758;}
+
+
+/* UTIL */
+.hdr_util > ul {display: flex;align-items: center;}
+.hdr_util > ul > li {position:relative;margin-left: 25px;}
+.hdr_util > ul > li a {display:inline-block;font-size:16px;font-weight: 600;transition: all ease .3s;font-family: 'KorailRoundGothicBold';}
+.hdr_util > ul > li a:hover {color:#000;}
+.hdr_util .mem {padding:10px 0;}
+.hdr_util .dep2 {display:none;position:absolute;bottom:-5px;left:50%;transform:translate(-50%, 100%);background:#fff;border:1px solid #2ec758;border-radius:5px;padding:20px;}
+.hdr_util .dep2 a {color:#666 !important;}
+.hdr_util .dep2 a:hover {color:#000 !important;;}
+.hdr_util .dep2:after {position:absolute;top:1px;left:50%;transform:translate(-50%, -100%);content:'';display:block;border-bottom:10px solid #fff;border-left:5px solid transparent;border-right:5px solid transparent;}
+.hdr_util .dep2:before {position:absolute;top:0;left:50%;transform:translate(-50%, -100%);content:'';display:block;border-bottom:12px solid #2ec758;border-left:6px solid transparent;border-right:6px solid transparent;}
+.hdr_util .dep2 li {margin:5px 0;}
+
+
+/* alarm */
+.hdr_util #bell button {font-size: 0; width: 30px;height: 30px; background-image: url('../images/common/bell_gray.png'); background-position: center; background-repeat: no-repeat; background-size: contain;background-size:20px;} 
+.main_on #bell button {background-image: url('../images/common/bell_white.png');}
+.main_on #bell button:hover {background-image: url('../images/common/bell.png');}
+#bell.on:after {position:absolute;top:0;right:0;content:'';display:block;width:5px;height:5px;border-radius:50%;background:magenta;}
+
+.modal_box.alarm .bdr_wrap {border-top:none;justify-content: center;}
+.modal_box.alarm .modal_back {display:none;position:fixed;background:rgba(0, 0, 0, .7);width:100%;height:100%;top:0;left:0;z-index: 800;}
+.modal_box.alarm .btn_modal_close {position:absolute;top:30px;right:30px;width:50px;}
+.modal_box.alarm .mid_tit {text-align: center;}
+.modal_box.alarm .mid_tit strong {font-size: 34px;}
+.modal_box.alarm .ico_info {background: url(../images/sub/circle_info.png) no-repeat 0 3px; padding-left: 25px; font-size: 16px; font-weight: 500; color: #aaa; background-size: 16px; display:inline-block;
+font-family:'Pretendard'; margin-top:10px;}
+.noti_list {border-top: 1px solid #2EC758;padding:20px 0;}
+.noti_list li{display: flex; justify-content: space-between; align-items: center; font-size: 20px; padding: 5px 20px 5px 30px; position: relative;}
+.noti_list li::before{content: ''; position: absolute; top: 50%; left: 20px; width: 3px; height: 3px; background-color: #000; border-radius: 50%;}
+.noti_list li .day{color: #2EC758;}
+.noti_list li .data{color: #888; font-size: 16px;}
+.modal_box.alarm .btn_wrap a{padding: 0 10px;}
+.modal_box.alarm .btn{width:160px;} 
+
+/********************************************************
+ 
+ *  Footer
+ 
+ ********************************************************/
+ 
+#footer {background:#ddd}
+.ftr_inner {padding:50px 0;}
+#footer address span {color:#666;display:inline-block;margin-right:15px;}
+.copyright {margin-top:20px;}
+
+
+/*************************************************************************************************
+ 
+ *  Common Layout
+ 
+**************************************************************************************************/
+
+/* Content Width */
+.w1280 {width:1280px;margin:0 auto;}
+
+/* Margin & Padding */ 
+.my20 {margin:20px 0;}
+.my30 {margin:30px 0;}
+.my50 {margin:50px 0;}
+.my120 {margin:120px 0;}
+.pa30 {padding : 30px;}
+.pa40 {padding : 40px;}
+.pa50 {padding:50px;}
+.px50 {padding:0 50px;}
+.px100 {padding:0 100px;}
+.py120 {padding:120px 0;}
+
+
+/*************************************************************************************************
+ 
+ *  Main Layout
+ 
+**************************************************************************************************/
+ 
+/* Visual */
+#visual {}
+
+
+/*************************************************************************************************
+ 
+ *  Sub Layout
+ 
+ *************************************************************************************************/
+
+/* Sub Visual */
+#sub_vis {color:#fff;}
+#sub_vis .w1280 {height:300px;padding-top:80px;}
+#sub_tit h2 strong {font-size:48px;}
+#sub_tit p {font-size:18px;font-weight: 400;margin-top:20px;}
+
+/* Sub Content */
+.sub_cont {margin-top:100px;margin-bottom:150px;}
+.guide_box {background:#f4f4f4;}
+.ico_info {background: url(../images/sub/circle_info.png) no-repeat 0 3px;padding-left:25px;font-size:16px;font-weight: 600;color:#aaa;background-size:16px;}
+.info_box {display: flex;align-items: center;justify-content: center;background:#f2f2f2;}
+
+
+/* Title */
+.big_tit h3,
+.mid_tit {margin-bottom:30px;}
+.big_tit h3 *,
+.mid_tit * {font-family: 'KorailRoundGothicBold';}
+.big_tit {text-align: center;}
+.big_tit h3 strong {font-size:48px;}
+.big_tit p {font-size:18px;color:#444;}
+.mid_tit strong {font-size:34px;}
+
+
+
+/*************************************************************************************************
+ *  Table
+ *************************************************************************************************/
+
+ /* Column Table */
+.bdr_wrap {border-top:3px solid #2EC758;}
+.bdr_wrap th,
+.bdr_wrap td {font-size:20px;border-bottom: 1px solid #ccc;padding:10px;}
+.bdr_wrap table td {text-align: center;}
+table .btn.bdr {display: inline-block;}
+table .btn.bdr a {display:inline-block;font-size:18px;color:#888;line-height: 1;padding:10px 20px;border: 1px solid #888;border-radius: 5px;}
+table .btn.bdr a:hover {color:#000;border-color: #000;font-weight: 600;}
+
+/* Row Table */
+.bdr_wrap.row th,
+.bdr_wrap.row td {border-bottom: none;}
+.bdr_wrap.row th {text-align: left;}
+
+/* Write Table */
+.tb_write {text-align: left;}
+.tb_write th {padding:30px;} 
+
+
+/*************************************************************************************************
+ *  Button Set
+ *************************************************************************************************/
+ 
+.btn_wrap {display: flex;justify-content: space-between;}
+.btn_wrap.center {justify-content: center;}
+.btn_wrap.center .btn + .btn {margin-left:10px;}
+.btn {display: inline-block;width:140px;padding:0 20px;line-height: 56px;font-size:20px;font-weight: 600;border-radius: 5px;vertical-align: middle;text-align: center;}
+.btn.w200 {width:200px;}
+.btn.bg {background:#ddd;color:#444;}
+.btn.grn {background:#2EC758;color:#fff;}
+.btn.bdr {color:#2EC758;border:1px solid #2EC758;border-radius: 5px;}
+.lb .btn {margin-right:5px;}
+.rb .btn {margin-left:5px;}
+.row_del a {display: block;}
+.row_del a img {display: block;}
+
+
+/*************************************************************************************************
+ *  Modal
+ *************************************************************************************************/
+
+/* .pop_box {display: none;} */
+
+.modal_back {display:none;position:fixed;background:rgba(0, 0, 0, .7);width:100%;height:100%;top:0;left:0;z-index: 800;}
+.modal_box {display:none;position:fixed;background:#fff;top:50%;left:50%;transform:translate(-50%, -50%);border-radius:10px;z-index: 900;}
+.modal_box.on {display: block;}
+.btn_modal_close {position:absolute;top:30px;right:30px;width:50px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
