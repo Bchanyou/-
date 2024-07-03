@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.smhrd.ingredient.database.IngredientMapper">
+
+	<!-- 품목 추가 -->
+	<insert id="insertIngredient"
+		parameterType="com.smhrd.ingredient.model.IngredientDTO">
+		INSERT INTO ingredients (mem_id, ingre_name,
+		purchased_at, expired_at,
+		ingre_unit, ingre_stock, ingre_bundle,
+		ingre_loc)
+		VALUES (#{mem_id}, #{ingre_name}, #{purchased_at},
+		#{expired_at},
+		#{ingre_unit}, #{ingre_stock}, #{ingre_bundle},
+		#{ingre_loc})
+	</insert>
+
+	<!-- 여러 품목 한 번에 추가 -->
+	<insert id="insertIngredients" parameterType="java.util.List">
+		INSERT INTO ingredient (mem_id, ingre_name, purchased_at, expired_at,
+		ingre_unit, ingre_stock, ingre_bundle, ingre_loc)
+		VALUES
+		<foreach collection="list" item="ingredient" separator=",">
+			(#{ingredient.mem_id}, #{ingredient.ingre_name},
+			#{ingredient.purchased_at}, #{ingredient.expired_at},
+			#{ingredient.ingre_unit}, #{ingredient.ingre_stock},
+			#{ingredient.ingre_bundle}, #{ingredient.ingre_loc})
+		</foreach>
+	</insert>
+
+	<!-- 품목 조회 -->
+	<select id="listIngredient"
+		resultType="com.smhrd.ingredient.model.IngredientDTO"
+		parameterType="String">
+		SELECT * FROM ingredients WHERE mem_id=#{mem_id}
+	</select>
+
+	<!-- 품목 소모 -->
+	<update id="consumeIngredient">
+		UPDATE ingredient SET ingre_stock = #{ingre_stock}
+		WHERE mem_id = #{mem_id} AND ingre_name = #{ingre_name} AND
+		purchased_at =
+		#{purchased_at}
+	</update>
+
+
+	<!-- 품목 삭제 -->
+	<delete id="deleteIngredient" parameterType="int">
+		DELETE FROM
+		ingredients WHERE ingre_idx = #{ingre_idx}
+	</delete>
+
+	<!-- 체크박스 품목 삭제 -->
+	<delete id="deleteIngredientByIdx" parameterType="int">
+		DELETE FROM
+		ingredients
+		WHERE ingre_idx = #{ingre_idx}
+	</delete>
+
+	<!-- 품목 수정 -->
+	<update id="editIngredient"
+		parameterType="com.smhrd.ingredient.model.IngredientDTO">
+		UPDATE ingredients SET
+		ingre_name = #{ingre_name},
+		purchased_at = #{purchased_at},
+		expired_at = #{expired_at},
+		ingre_unit = #{ingre_unit},
+		ingre_stock = #{ingre_stock},
+		ingre_bundle = #{ingre_bundle},
+		ingre_loc = #{ingre_loc}
+		WHERE mem_id = #{mem_id}
+		AND ingre_idx = #{ingre_idx}
+	</update>
+
+	<!-- 품목 조회 -->
+	<!-- <select id="listIngredient" resultType="com.smhrd.ingredient.model.IngredientDTO" 
+		parameterType="String"> SELECT ingre_name, ingre_stock, purchased_at, expired_at 
+		,ingre_loc FROM ingredients WHERE mem_id=#{mem_id} </select> -->
+
+
+
+	<!-- 캘린더 -->
+	<select id="selectByMemberId" parameterType="String"
+		resultType="com.smhrd.ingredient.model.IngredientDTO">
+		SELECT * FROM ingredients WHERE mem_id = #{mem_id}
+	</select>
+
+	<!-- 유통기한 가져오기 -->
+	<select id="selectExpiryDates"
+		resultType="com.smhrd.ingredient.model.IngredientDTO"
+		parameterType="String">
+		SELECT ingre_name, expired_at
+		FROM ingredients
+		WHERE
+		mem_id=#{mem_id}
+	</select>
+
+
+</mapper>
